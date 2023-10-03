@@ -3,25 +3,30 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background: #f1f5f9;
+  --yellow300: #fde047;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: var(--background);
+}
+.flexCenter {
+  @apply flex items-center justify-center;
+}
+.gapSpace {
+  @apply px-4;
+}
+.underline-text {
+  @apply after:content-[''] after:bg-blue-300 after:w-full after:h-[2px] after:absolute after:mt-6 lg:after:mt-4 after:top-1 after:left-0 xl:after:mt-5;
+}
+.desktop {
+  @apply lg:h-12 lg:left-[1%] lg:rounded-sm xl:text-base lg:w-auto lg:justify-center;
 }
