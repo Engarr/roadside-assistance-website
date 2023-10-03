@@ -25,7 +25,7 @@ const Logo = ({ scrollPositionY, isDesktop }: PropsType) => {
       : 'opacity-0 h-[0px]';
   return (
     <motion.div
-      className={` flexCenter flex-col fixed right-0 top-0 ${scrollClassDiv} lg:left-1/2  lg:w-[220px] lg:rounded-sm lg:p-3 xl:w-[450px] transition-all duration-300`}
+      className={` flexCenter flex-col fixed right-0 top-0 ${scrollClassDiv} lg:left-1/2  lg:w-[220px] lg:rounded-sm lg:p-3 xl:w-[24.125rem] transition-all duration-300`}
       initial={{ opacity: 0, y: -100, x: isDesktop ? '-50%' : '0%' }}
       animate={{ opacity: 1, y: 0, x: isDesktop ? '-50%' : '0%' }}>
       <Link href='/'>

@@ -49,7 +49,7 @@ const Nav = ({ scrollPositionY }: PropsType) => {
           </motion.div>
         )}
 
-        <ul className='flexCenter flex-col  gap-5 text-xl p-5 mt-[6.25rem] lg:text-sm lg:gap-4 lg:flex-row lg:mt-0 xl:gap-5 xl:text-base'>
+        <ul className='flexCenter flex-col gap-5 text-xl xl:p-4 lg:p-4 mt-[6.25rem] md:text-sm lg:gap-4 lg:flex-row lg:mt-0 xl:gap-5 xl:text-base'>
           {links.map((link, index) => (
             <li key={index}>
               <Link
