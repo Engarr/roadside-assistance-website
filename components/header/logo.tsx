@@ -26,16 +26,16 @@ const Logo = ({ scrollPositionY, isDesktop }: PropsType) => {
   return (
     <motion.div
       className={` flexCenter flex-col fixed right-0 top-0 ${scrollClassDiv} lg:left-1/2  lg:w-[220px] lg:rounded-sm lg:p-3 xl:w-[24.125rem] transition-all duration-300`}
-      initial={{ opacity: 0, y: -100, x: isDesktop ? '-50%' : '0%' }}
+      initial={{ opacity: 0, y: -100, x: '-50%' }}
       animate={{ opacity: 1, y: 0, x: isDesktop ? '-50%' : '0%' }}>
       <Link href='/'>
         <h1
-          className={`mt-3 mr-3  uppercase  text-xl ${roboto_mono.className}  ${scrollClassH1} transition-all lg:mt-0 lg:mr-0 lg:text-2xl xl:text-4xl`}>
-          Pomoc <span className='text-orange-500 font-bold'>drogowa</span>
+          className={`text-orange-500 font-bold mt-3 mr-3  uppercase  text-xl ${roboto_mono.className}  ${scrollClassH1} transition-all lg:mt-0 lg:mr-0 lg:text-2xl xl:text-4xl`}>
+          Pomoc drogowa
         </h1>
       </Link>
       <div
-        className={` hidden  flex-col text-center mt-1  ${scrollClassDivData} transition-all lg:flex`}>
+        className={` hidden  flex-col text-center mt-1 ${scrollClassDivData} transition-all lg:flex`}>
         <p className='font-semibold tracking-widest xl:text-2xl'>TRANSWOŚ</p>
         <p className='text-sm mb-2 xl:text-base'>Stanisław Woś</p>
       </div>

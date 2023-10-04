@@ -1,4 +1,4 @@
-import Header from '@/components/header';
+import Header from '@/components/header/header';
 import './globals.css';
 import type { Metadata } from 'next';
 import { inter } from '@/lib/fonts';
@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en'>
+    <html lang='en' className='!scroll-smooth'>
       <body className={`${inter.className} relative`}>
         <ContextProvider>
           <Header />
