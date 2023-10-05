@@ -17,7 +17,7 @@ const Nav = ({ scrollPositionY, isDesktop }: PropsType) => {
 
   const scrollClass =
     scrollPositionY <= 0
-      ? ' lg:top-[6.5rem] bg-white text-black shadow-lg '
+      ? 'lg:top-[6.5rem] bg-white text-black shadow-lg '
       : 'lg:top-[2rem] bg-white lg:bg-transparent text-black shadow-none';
   const activeMenuHandler = () => {
     setIsMenuVisible((prev) => !prev);
@@ -50,12 +50,12 @@ const Nav = ({ scrollPositionY, isDesktop }: PropsType) => {
           </motion.div>
         )}
 
-        <ul className='flexCenter flex-col gap-8 text-xl xl:p-4 lg:p-4 mt-[6.25rem] md:text-sm lg:gap-4 lg:flex-row lg:mt-0 xl:gap-5 xl:text-base'>
+        <ul className='flexCenter flex-col text-xl xl:p-4 lg:p-4 mt-[6.25rem] md:text-sm lg:gap-4 lg:flex-row lg:mt-0 xl:gap-5 xl:text-base'>
           {links.map((link, index) => (
-            <li key={index}>
+            <li key={index} className='my-3'>
               <Link
                 href={link.link}
-                className={` capitalize hover:text-blue-400 transition relative  ${
+                className={` capitalize hover:text-blue-400 transition relative ${
                   link.name === activePage ? 'underline-text' : ''
                 }`}>
                 {link.name}
