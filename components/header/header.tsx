@@ -3,9 +3,8 @@
 import React from 'react';
 import Logo from './logo';
 import Nav from './nav';
-import Card from './card';
 import { useScrollPosition } from '@/store/scroll-position-context';
-import { motion, useScroll } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useMediaQuery } from '@chakra-ui/react';
 
 const Header = () => {
@@ -14,22 +13,20 @@ const Header = () => {
     ssr: true,
     fallback: false,
   });
-  const { scrollY } = useScroll();
-  console.log(scrollY);
+
   const scrollClass =
-    scrollPositionY <= 0 ? 'h-[6rem] bg-white' : 'h-[4.5rem] bg-white/80';
+    scrollPositionY <= 0 ? 'lg:h-[8rem] bg-white' : ' lg:h-[6rem] bg-white/80';
 
   return (
     <section className='relative '>
       <motion.div
-        className={`fixed z-[900] w-full top-0  shadow-lg ${scrollClass} transition-all`}
+        className={`fixed z-[900] w-full top-0  shadow-lg h-[5rem] ${scrollClass} transition-all duration-300`}
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
         }}>
-        <Nav scrollPositionY={scrollPositionY} />
+        <Nav scrollPositionY={scrollPositionY} isDesktop={isDesktop} />
         <Logo scrollPositionY={scrollPositionY} isDesktop={isDesktop} />
-        <Card scrollPositionY={scrollPositionY} />
       </motion.div>
     </section>
   );

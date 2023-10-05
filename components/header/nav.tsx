@@ -9,15 +9,16 @@ import { GrClose } from 'react-icons/gr';
 
 type PropsType = {
   scrollPositionY: number;
+  isDesktop: boolean;
 };
-const Nav = ({ scrollPositionY }: PropsType) => {
+const Nav = ({ scrollPositionY, isDesktop }: PropsType) => {
   const [activePage, setActivePage] = useState('Strona główna');
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const scrollClass =
     scrollPositionY <= 0
-      ? 'lg:top-[3.5rem] bg-white text-black shadow-lg '
-      : 'lg:top-[1rem] bg-white lg:bg-transparent text-black shadow-none';
+      ? ' lg:top-[6.5rem] bg-white text-black shadow-lg '
+      : 'lg:top-[2rem] bg-white lg:bg-transparent text-black shadow-none';
   const activeMenuHandler = () => {
     setIsMenuVisible((prev) => !prev);
   };
@@ -38,8 +39,8 @@ const Nav = ({ scrollPositionY }: PropsType) => {
       <motion.nav
         className={`fixed flex items-center justify-start w-full h-full top-0 flex-col z-[990] text-sm  desktop  transition-all duration-300 
          ${scrollClass} ${activeMenuCss}`}
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 1, x: 0 }}>
+        initial={{ opacity: 0, x: 0 }}
+        animate={{ opacity: 1, x: isMenuVisible && isDesktop ? '1%' : 0 }}>
         {isMenuVisible && (
           <motion.div
             initial={{ opacity: 0, y: 1000, x: '0%' }}
