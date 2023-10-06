@@ -9,7 +9,7 @@ import { useMediaQuery } from '@chakra-ui/react';
 import { useIsSectionInView } from '@/lib/hook';
 
 const Header = () => {
-  const { ref } = useIsSectionInView('Strona główna', 0.5);
+  const { ref } = useIsSectionInView('Strona główna', 0.75);
   const { scrollPositionY } = useScrollPosition();
   const [isDesktop] = useMediaQuery('(min-width: 1024px)', {
     ssr: true,

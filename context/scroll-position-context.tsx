@@ -19,6 +19,10 @@ export const ScrollPositionContextProvider = ({
   const [scrollPositionY, setScrollPositionY] = useState(0);
 
   useEffect(() => {
+    setScrollPositionY(window.scrollY);
+  }, []);
+
+  useEffect(() => {
     const handleScroll = () => {
       setScrollPositionY(window.scrollY);
     };

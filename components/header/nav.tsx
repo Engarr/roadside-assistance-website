@@ -56,7 +56,10 @@ const Nav = ({ scrollPositionY, isDesktop }: PropsType) => {
             <li
               key={index}
               className='my-3 tracking-wide'
-              onClick={() => setActiveSection(link.name)}>
+              onClick={() => {
+                setActiveSection(link.name);
+                setIsMenuVisible(false);
+              }}>
               <Link
                 href={link.link}
                 className={` capitalize hover:text-blue-400 transition relative ${
