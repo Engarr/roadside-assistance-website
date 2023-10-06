@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { useScrollPosition } from '@/store/scroll-position-context';
+import { useScrollPosition } from '@/context/scroll-position-context';
 import { IoIosArrowDown } from 'react-icons/io';
 
 const Scroll = () => {

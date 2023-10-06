@@ -2,7 +2,7 @@ import Header from '@/components/header/header';
 import './globals.css';
 import type { Metadata } from 'next';
 import { inter } from '@/lib/fonts';
-import ContextProvider from '@/store/context-provider';
+import ContextProvider from '@/context/context-provider';
 
 export const metadata: Metadata = {
   title: 'Pomoc Drogowa | Transwoś Stanisław Woś',

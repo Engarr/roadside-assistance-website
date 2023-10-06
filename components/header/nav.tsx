@@ -6,13 +6,14 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { RxHamburgerMenu } from 'react-icons/rx';
 import { GrClose } from 'react-icons/gr';
+import { useActiveSection } from '@/context/activeSection-context';
 
 type PropsType = {
   scrollPositionY: number;
   isDesktop: boolean;
 };
 const Nav = ({ scrollPositionY, isDesktop }: PropsType) => {
-  const [activePage, setActivePage] = useState('Strona główna');
+  const { activeSection, setActiveSection } = useActiveSection();
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
   const scrollClass =
@@ -52,11 +53,16 @@ const Nav = ({ scrollPositionY, isDesktop }: PropsType) => {
 
         <ul className='flexCenter flex-col text-xl xl:p-4 lg:p-4 mt-[6.25rem] md:text-sm lg:gap-4 lg:flex-row lg:mt-0 xl:gap-5 xl:text-base'>
           {links.map((link, index) => (
-            <li key={index} className='my-3 tracking-wide'>
+            <li
+              key={index}
+              className='my-3 tracking-wide'
+              onClick={() => setActiveSection(link.name)}>
               <Link
                 href={link.link}
                 className={` capitalize hover:text-blue-400 transition relative ${
-                  link.name === activePage ? 'text-blue-400 font-semibold ' : ''
+                  link.name === activeSection
+                    ? 'text-blue-400 font-semibold '
+                    : ''
                 }`}>
                 {link.name}
               </Link>

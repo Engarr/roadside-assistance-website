@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { ScrollPositionContextProvider } from './scroll-position-context';
+import { ActiveSectionContextProvider } from './activeSection-context';
 
 type ContextProviderType = {
   children: React.ReactNode;
@@ -9,7 +10,9 @@ type ContextProviderType = {
 
 const ContextProvider = ({ children }: ContextProviderType) => {
   return (
-    <ScrollPositionContextProvider>{children}</ScrollPositionContextProvider>
+    <ScrollPositionContextProvider>
+      <ActiveSectionContextProvider>{children}</ActiveSectionContextProvider>
+    </ScrollPositionContextProvider>
   );
 };
 
