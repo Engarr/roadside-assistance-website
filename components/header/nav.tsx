@@ -52,11 +52,11 @@ const Nav = ({ scrollPositionY, isDesktop }: PropsType) => {
 
         <ul className='flexCenter flex-col text-xl xl:p-4 lg:p-4 mt-[6.25rem] md:text-sm lg:gap-4 lg:flex-row lg:mt-0 xl:gap-5 xl:text-base'>
           {links.map((link, index) => (
-            <li key={index} className='my-3'>
+            <li key={index} className='my-3 tracking-wide'>
               <Link
                 href={link.link}
                 className={` capitalize hover:text-blue-400 transition relative ${
-                  link.name === activePage ? 'underline-text' : ''
+                  link.name === activePage ? 'text-blue-400 font-semibold ' : ''
                 }`}>
                 {link.name}
               </Link>

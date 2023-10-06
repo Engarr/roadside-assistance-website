@@ -15,7 +15,7 @@ const Header = () => {
   });
 
   const scrollClass =
-    scrollPositionY <= 0 ? 'lg:h-[8rem] bg-white' : ' lg:h-[6rem] bg-white/80';
+    scrollPositionY <= 0 ? 'lg:h-[8rem] bg-white' : ' lg:h-[6rem] bg-white/90';
 
   return (
     <section className='relative '>

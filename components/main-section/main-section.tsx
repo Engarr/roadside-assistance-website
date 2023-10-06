@@ -51,7 +51,7 @@ const MainSection = () => {
       </div>
 
       <motion.div
-        className='flexCenter absolute bottom-0  bg-orange-500/75 w-full text-white font-bold z-[100] py-3 px-2 lg:py-5 text-sm xl:text-2xl '
+        className='flexCenter absolute bottom-0  bg-orange-500/75 w-full text-white font-bold z-[100] py-3 px-2 lg:py-5 text-sm xl:text-2xl shadow-xl '
         initial={{ opacity: 0, x: -100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 1 }}>
