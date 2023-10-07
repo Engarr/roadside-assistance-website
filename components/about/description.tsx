@@ -14,7 +14,7 @@ const slideAnimation = {
   slide: (index: number) => ({
     opacity: 1,
     x: 0,
-    transition: { delay: index * 0.2 },
+    transition: { delay: index * 0.125 },
   }),
 };
 
@@ -32,7 +32,16 @@ const Description = ({ children, index }: DescriptionProps) => {
         custom={index}>
         {children}
       </motion.p>
-      <BsThreeDots className='text-orange-500 text-2xl my-2' />
+      <motion.div
+        variants={slideAnimation}
+        whileInView='slide'
+        initial='initial'
+        viewport={{
+          once: true,
+        }}
+        custom={index}>
+        <BsThreeDots className='text-orange-500 text-2xl my-2' />
+      </motion.div>
     </>
   );
 };

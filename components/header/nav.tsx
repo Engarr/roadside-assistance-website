@@ -31,26 +31,31 @@ const Nav = ({ scrollPositionY, isDesktop }: PropsType) => {
       {!isMenuVisible && (
         <motion.div
           className='mt-3 ml-3 text-4xl block lg:hidden z-[999]'
-          initial={{ opacity: 0, y: 1000, x: '0%' }}
-          animate={{ opacity: 1, y: 0, x: '0%' }}>
+          initial={{ opacity: 0, y: -100, x: '0%' }}
+          animate={{ opacity: 1, y: 0, x: '0%' }}
+          transition={{ bounce: false }}>
           <RxHamburgerMenu onClick={activeMenuHandler} />
+        </motion.div>
+      )}
+      {isMenuVisible && (
+        <motion.div
+          initial={{ opacity: 0, y: -100 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ bounce: false }}
+          className=' block lg:hidden z-[999] left-[0%] absolute mt-3 ml-3'>
+          <GrClose className='text-4xl' onClick={activeMenuHandler} />
         </motion.div>
       )}
 
       <motion.nav
         className={`fixed flex items-center justify-start w-full h-full top-0 flex-col z-[990] text-sm  desktop  transition-all duration-300 
          ${scrollClass} ${activeMenuCss}`}
-        initial={{ opacity: 0, x: 0 }}
-        animate={{ opacity: 1, x: isMenuVisible && isDesktop ? '1%' : 0 }}>
-        {isMenuVisible && (
-          <motion.div
-            initial={{ opacity: 0, y: 1000, x: '0%' }}
-            animate={{ opacity: 1, y: 0, x: '0%' }}
-            className=' block lg:hidden z-[999] left-[0%] absolute mt-3 ml-3'>
-            <GrClose className='text-4xl' onClick={activeMenuHandler} />
-          </motion.div>
-        )}
-
+        initial={{ opacity: 0, x: 0, y: -100 }}
+        animate={{
+          opacity: 1,
+          x: isMenuVisible && isDesktop ? '1%' : 0,
+          y: 0,
+        }}>
         <ul className='flexCenter flex-col text-xl xl:p-4 lg:p-4 mt-[6.25rem] md:text-sm lg:gap-4 lg:flex-row lg:mt-0 xl:gap-5 xl:text-base'>
           {links.map((link, index) => (
             <li

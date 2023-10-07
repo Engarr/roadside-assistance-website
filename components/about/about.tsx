@@ -1,37 +1,19 @@
 'use client';
 import { useIsSectionInView } from '@/lib/hook';
 import React from 'react';
-import { BsThreeDots } from 'react-icons/bs';
-import { motion } from 'framer-motion';
 import Description from './description';
+import Title from '../title';
 
 const About = () => {
   const { ref } = useIsSectionInView('O nas');
 
-  const dropDown = {
-    initial: {
-      opacity: 0,
-      y: -100,
-    },
-    animate: {
-      opacity: 1,
-      y: 0,
-    },
-  };
-
   return (
-    <section ref={ref} id='onas' className='scroll-mt-24 lg:scroll-mt-28 mb-28'>
-      <div className='relative w-full lg:w-1/2 lg:left-1/2 lg:-translate-x-1/2 mt-28 lg:text-xl p-5 flex items-center text-center justify-center flex-col '>
-        <motion.h2
-          className='capitalize text-2xl lg:text-3xl mb-5 tracking-wider text-orange-500 font-bold '
-          variants={dropDown}
-          whileInView='animate'
-          initial='initial'
-          viewport={{
-            once: true,
-          }}>
-          O nas
-        </motion.h2>
+    <section
+      ref={ref}
+      id='onas'
+      className='scroll-mt-24 lg:scroll-mt-28 mb-36 relative w-full lg:w-1/2 lg:left-1/2 lg:-translate-x-1/2 mt-28 lg:text-xl p-5 flex items-center text-center justify-center flex-col min-h-[700px]'>
+      <Title>O nas</Title>
+      <div className='w-full flex flex-col  items-center overflow-hidden'>
         <Description index={1}>
           <span className='font-semibold'>Firma Transwoś </span> to firma
           specjalizująca się w świadczeniu usług pomocy drogowej dla{' '}

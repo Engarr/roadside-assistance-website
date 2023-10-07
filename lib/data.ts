@@ -5,11 +5,12 @@ import { GrMapLocation } from 'react-icons/gr';
 export const links = [
   { name: 'Strona główna', link: '#glowna' },
   { name: 'O nas', link: '#onas' },
+  { name: 'Oferta', link: '#oferta' },
   { name: 'Konatkt', link: '#kontakt' },
-  { name: 'Oferta', link: '/oferta' },
   { name: 'Galeria', link: '/galeria' },
 ] as const;
-export const offerts = [
+
+export const offers = [
   {
     title: 'Holujemy',
     arr: [
@@ -20,7 +21,7 @@ export const offerts = [
     icon: React.createElement(BsTruckFlatbed),
   },
   {
-    title: 'Usługi świadczymy ',
+    title: 'Świadczymy usługi',
     arr: ['Na terenie całego kraju'],
     icon: React.createElement(GrMapLocation),
   },

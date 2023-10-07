@@ -3,10 +3,9 @@ import { linksNameType } from './types';
 import { useInView } from 'react-intersection-observer';
 import { useEffect } from 'react';
 
-
 export const useIsSectionInView = (
   sectionName: linksNameType,
-  threshold = 0.5
+  threshold = 0.75
 ) => {
   const { setActiveSection } = useActiveSection();
 

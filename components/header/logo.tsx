@@ -23,9 +23,9 @@ const Logo = ({ scrollPositionY, isDesktop }: PropsType) => {
     scrollPositionY <= 0 ? 'opacity-1 lg:h-[60px] ' : 'opacity-0 lg:h-[5px]';
   return (
     <motion.div
-      className={` flexCenter flex-col fixed right-0 top-0 mt-0 ${scrollClassDiv} lg:w-[20.125rem] lg:rounded-sm lg:p-3 xl:w-[28.125rem] transition-all duration-300 z-[999]`}
-      initial={{ opacity: 0, y: -100, x: '-50%' }}
-      animate={{ opacity: 1, y: 0, x: isDesktop ? '-50%' : '0%' }}>
+      className={` flexCenter flex-col fixed right-0 lg:right-10 top-0 mt-0  ${scrollClassDiv} lg:w-[20.125rem] lg:rounded-sm lg:p-3 xl:w-[28.125rem] transition-all duration-300 z-[999]`}
+      initial={{ opacity: 0, y: -100 }}
+      animate={{ opacity: 1, y: 0 }}>
       <Link href='/' className='hover:scale-105 active:scale-95 transition-all'>
         <h1
           className={`text-orange-500 font-bold mt-3 mr-3  uppercase  text-xl ${roboto_mono.className}  ${scrollClassH1} transition-all lg:mt-0 lg:mr-0 lg:text-2xl xl:text-4xl`}>

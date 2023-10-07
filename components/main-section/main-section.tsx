@@ -5,26 +5,33 @@ import backgroundImage from '@/public/image/AdobeStock_227994316.jpeg';
 import { motion } from 'framer-motion';
 import { CgPhone } from 'react-icons/cg';
 import { handleCall } from '@/lib/utils';
-import { roboto_mono } from '@/lib/fonts';
 import Scroll from './scroll';
+import { useIsSectionInView } from '@/lib/hook';
 
 const MainSection = () => {
+  const { ref } = useIsSectionInView('Strona główna', 1);
   return (
-    <section className='h-screen relative' id='glowna'>
-      <div className='absolute top-0 ring-0 w-full h-full bg-black/60 z-[50]' />
-      <Image
-        src={backgroundImage}
-        alt='bacground_Image'
-        quality={80}
-        className='object-cover'
-        fill
+    <section className='h-screen relative' id='glowna' ref={ref}>
+      <motion.div
+        className='absolute top-0 ring-0 w-full h-full bg-black/60 z-[50]'
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
       />
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+        <Image
+          src={backgroundImage}
+          alt='bacground_Image'
+          quality={80}
+          className='object-cover'
+          fill
+        />
+      </motion.div>
       <div
         className=' absolute p-2 lg:p-0 top-[20%] lg:top-[40%] left-1/2 -translate-x-[50%] z-[100] w-full lg:w-[65%] 
-        text-white tracking-wider  
+        text-white   
       '>
         <motion.h2
-          className={`${roboto_mono.className} text-xl lg:text-5xl my-2 font-bold`}
+          className={` text-xl lg:text-5xl my-2 font-bold`}
           initial={{
             opacity: 0,
             x: -100,
