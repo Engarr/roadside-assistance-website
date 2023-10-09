@@ -67,7 +67,7 @@ const CardOffer = ({ title, arr, icon, index }: CardOfferProps) => {
             </ul>
           </div>
           <div>
-            <div className='bg-gray-400/10 w-[70px] h-[70px] flexCenter rounded-full shadow-sm text-2xl lg:text-xl lg:mx-5 '>
+            <div className='bg-gray-400/10 w-[70px] h-[70px] flexCenter rounded-full shadow-sm text-2xl lg:text-3xl lg:mx-5 '>
               {icon}
             </div>
           </div>

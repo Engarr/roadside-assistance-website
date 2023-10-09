@@ -64,14 +64,21 @@ const MainSection = () => {
         transition={{ duration: 1 }}>
         <p className='flex flex-col lg:flex-row items-center justify-center text-center tracking-wide text-base lg:text-2xl'>
           Potrzebujesz pomocy?
-          <motion.span
+          <motion.button
             className=' mt-1 lg:mt-0 bg-green-500 py-2 lg:ml-4  rounded-3xl text-center flex justify-center items-center w-full lg:w-[180px] lg:text-xl border border-white/20 sm:cursor-pointer'
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
+            whileHover={{
+              scale: 1.1,
+              transition: {
+                repeat: Infinity,
+                repeatType: 'reverse',
+                duration: 0.5,
+              },
+            }}
+            whileTap={{ scale: 0.9 }}
             onClick={handleCall}>
             <CgPhone className=' font-extrabold  pr-1 text-2xl lg:text-3xl' />
             Zadzwoń
-          </motion.span>
+          </motion.button>
         </p>
       </motion.div>
       <Scroll />

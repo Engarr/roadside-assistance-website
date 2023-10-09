@@ -14,7 +14,7 @@ const Offer = () => {
       ref={ref}
       id='oferta'
       className='scroll-mt-36 mt-28 mb-28 relative h-[1000px] text-center '>
-      <Title>Oferta</Title>
+      <Title>Co możemy zaoferować?</Title>
       <div className=' flex flex-col w-full lg:w-[70%] lg:left-1/2 relative lg:-translate-x-1/2 mt-3'>
         {offers.map((item, index) => (
           <React.Fragment key={index}>

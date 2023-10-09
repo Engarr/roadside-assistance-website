@@ -12,7 +12,7 @@ const About = () => {
       ref={ref}
       id='onas'
       className='scroll-mt-24 lg:scroll-mt-28 mb-36 relative w-full lg:w-1/2 lg:left-1/2 lg:-translate-x-1/2 mt-28 lg:text-xl p-5 flex items-center text-center justify-center flex-col min-h-[700px]'>
-      <Title>O nas</Title>
+      <Title>Kim jesteśmy?</Title>
       <div className='w-full flex flex-col  items-center overflow-hidden'>
         <Description index={1}>
           <span className='font-semibold'>Firma Transwoś </span> to firma

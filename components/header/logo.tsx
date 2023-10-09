@@ -40,13 +40,13 @@ const Logo = ({ scrollPositionY, isDesktop }: PropsType) => {
       <div
         className='flex items-center justify-center text-lg z-[900]'
         onClick={handleCall}>
-        <p className='flexCenter hover:scale-105 active:scale-95 transition-all cursor-pointer'>
+        <motion.p className='flexCenter hover:scale-105 active:scale-95 transition-all cursor-pointer'>
           <CgPhone className='text-green-700 ' />
 
           <span className={`font-semibold pl-1 ${roboto_mono.className}`}>
             608 450 246
           </span>
-        </p>
+        </motion.p>
       </div>
     </motion.div>
   );
