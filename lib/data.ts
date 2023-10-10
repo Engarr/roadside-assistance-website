@@ -3,10 +3,10 @@ import { BsPatchQuestion, BsTruckFlatbed } from 'react-icons/bs';
 import { GrMapLocation } from 'react-icons/gr';
 
 export const links = [
-  { name: 'Strona główna', link: '#glowna' },
-  { name: 'O nas', link: '#onas' },
-  { name: 'Oferta', link: '#oferta' },
-  { name: 'Konatkt', link: '#kontakt' },
+  { name: 'Strona główna', link: '/#glowna' },
+  { name: 'O nas', link: '/#onas' },
+  { name: 'Oferta', link: '/#oferta' },
+  { name: 'Konatkt', link: '/#kontakt' },
   { name: 'Galeria', link: '/galeria' },
 ] as const;
 
