@@ -24,15 +24,15 @@ const MenuToggleButton = ({ toggle, isMenuVisible }: MenuToggleButtonProps) => {
       onClick={() => toggle((prev) => !prev)}
       className='fixed mt-4 ml-4 z-[999] lg:hidden'
       animate={isMenuVisible ? 'open' : 'closed'}>
-      <svg width='40' height='40' viewBox='0 0 40 40'>
+      <svg width='23' height='23' viewBox='0 0 23 23'>
         <Path
           variants={{
-            closed: { d: 'M 2 2.5 L 30 2.5' },
+            closed: { d: 'M 2 2.5 L 20 2.5' },
             open: { d: 'M 3 16.5 L 17 2.5' },
           }}
         />
         <Path
-          d='M 2 9.423 L 30 9.423'
+          d='M 2 9.423 L 20 9.423'
           variants={{
             closed: { opacity: 1, x: 0, transition: { delay: 0.125 } },
             open: { opacity: 0, x: -100 },
@@ -40,10 +40,9 @@ const MenuToggleButton = ({ toggle, isMenuVisible }: MenuToggleButtonProps) => {
           transition={{ duration: 0.1 }}
         />
         <Path
-          props={{ d: 'M 2 16.423 L 30 16.423' }}
           variants={{
-            closed: { d: 'M 2 16.346 L 30 16.346' },
-            open: { d: 'M 2 2.5 L 16 17.346' },
+            closed: { d: 'M 2 16.346 L 20 16.346' },
+            open: { d: 'M 3 2.5 L 17 16.346' },
           }}
         />
       </svg>
