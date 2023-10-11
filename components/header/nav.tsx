@@ -8,6 +8,7 @@ import { RxHamburgerMenu } from 'react-icons/rx';
 import { GrClose } from 'react-icons/gr';
 import { useActiveSection } from '@/context/activeSection-context';
 import clsx from 'clsx';
+import MenuToggleButton from '../menu-toggle-button';
 
 type PropsType = {
   scrollPositionY: number;
@@ -47,24 +48,10 @@ const Nav = ({ scrollPositionY, isDesktop }: PropsType) => {
 
   return (
     <>
-      {!isMenuVisible && (
-        <motion.div
-          className='mt-3 ml-3 text-4xl block lg:hidden z-[999]'
-          variants={buttonAnimaion}
-          initial='hidden'
-          animate='visible'>
-          <RxHamburgerMenu onClick={activeMenuHandler} />
-        </motion.div>
-      )}
-      {isMenuVisible && (
-        <motion.div
-          variants={buttonAnimaion}
-          initial='hidden'
-          animate='visible'
-          className=' block lg:hidden z-[999] left-[0%] absolute mt-3 ml-3'>
-          <GrClose className='text-4xl' onClick={activeMenuHandler} />
-        </motion.div>
-      )}
+      <MenuToggleButton
+        toggle={activeMenuHandler}
+        isMenuVisible={isMenuVisible}
+      />
 
       <motion.nav
         className={`fixed flex items-center justify-start w-full h-full top-0 flex-col z-[990] text-sm desktop transition-all duration-300 
