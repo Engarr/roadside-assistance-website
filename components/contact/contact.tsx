@@ -1,11 +1,13 @@
 'use client';
 
 import { useIsSectionInView } from '@/lib/hook';
-import React from 'react';
+import React, { Suspense } from 'react';
 import Title from '../title';
 import { motion } from 'framer-motion';
 import { GoLocation } from 'react-icons/go';
 import { dropDownVariants } from '../title';
+
+const Map = React.lazy(() => import('./map'));
 
 const Contact = () => {
   const { ref } = useIsSectionInView('Kontakt');
@@ -25,26 +27,24 @@ const Contact = () => {
           viewport={{
             once: true,
           }}>
-          <iframe
-            src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2570.922817314262!2d22.794962!3d49.881476!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473b7d0e285aa50d%3A0xdee8e2b2060d6f06!2sLipowa%2088%2C%2037-716%20Or%C5%82y!5e0!3m2!1spl!2spl!4v1697111581351!5m2!1spl!2spl'
-            title='lokalizacja firmy Transwoś'
-            width='600'
-            height='450'
-            style={{ border: '0', width: '100%', height: '100%', padding: 2 }}
-            allowFullScreen={true}
-            loading='lazy'
-            referrerPolicy='no-referrer-when-downgrade'></iframe>
+          <Suspense fallback={<div>Pobierania mapy...</div>}>
+            <Map />
+          </Suspense>
         </motion.div>
-        <motion.div className='mt-0 lg:mt-5'>
+        <motion.div className='mt-0 lg:mt-5  '>
           <Title textSize='text-2xl' mb=' mb-[2.25rem]'>
             Siedziba firmy
           </Title>
-          <h3 className='mb-2'>
+          <motion.h3
+            className='mb-2'
+            variants={dropDownVariants}
+            initial='initial'
+            whileInView='animate'>
             <span className='tracking-wider font-semibold text-xl'>
               TRANSWOS
             </span>{' '}
             - Stanisław Woś
-          </h3>
+          </motion.h3>
           <div className='flexCenter flex-col lg:flex-row lg:text-2xl mb-[3.125rem] lg:mb-0'>
             <motion.div
               className=' lg:mr-4 mb-2 lg:mb-0'
@@ -58,7 +58,9 @@ const Contact = () => {
               variants={dropDownVariants}
               initial='initial'
               whileInView='animate'>
-              <p className='mb-2 font-semibold tracking-wider '>Lipowa 88</p>
+              <p className='mb-2 font-semibold tracking-wider text-xl '>
+                Lipowa 88
+              </p>
               <p>37-716 Orły</p>
             </motion.div>
           </div>

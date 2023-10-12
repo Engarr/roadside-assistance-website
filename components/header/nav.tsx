@@ -4,7 +4,6 @@ import { links } from '@/lib/data';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-
 import { useActiveSection } from '@/context/activeSection-context';
 import clsx from 'clsx';
 import MenuToggleButton from '../menu-toggle-button';

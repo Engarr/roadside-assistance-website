@@ -1,6 +1,6 @@
+import React from 'react';
 import { roboto_mono } from '@/lib/fonts';
 import Link from 'next/link';
-import React from 'react';
 import { motion } from 'framer-motion';
 import { CgPhone } from 'react-icons/cg';
 import { handleCall } from '@/lib/utils';
