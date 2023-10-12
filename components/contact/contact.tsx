@@ -10,8 +10,8 @@ import { dropDownVariants } from '../title';
 const Map = React.lazy(() => import('./map'));
 
 const Contact = () => {
-  const { ref } = useIsSectionInView('Kontakt');
-
+  const { ref, inView } = useIsSectionInView('Kontakt');
+  console.log(inView);
   return (
     <section
       ref={ref}
@@ -27,9 +27,11 @@ const Contact = () => {
           viewport={{
             once: true,
           }}>
-          <Suspense fallback={<div>Pobierania mapy...</div>}>
-            <Map />
-          </Suspense>
+          {inView && (
+            <Suspense fallback={<div>Pobierania mapy...</div>}>
+              <Map />
+            </Suspense>
+          )}
         </motion.div>
         <motion.div className='mt-0 lg:mt-5  '>
           <Title textSize='text-2xl' mb=' mb-[2.25rem]'>

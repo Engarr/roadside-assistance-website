@@ -8,8 +8,10 @@ const Scroll = () => {
     <Link
       href='/#onas'
       className='text-[var(--mainColor)] z-[90] cursor-pointer text-4xl'>
-      <div
-        className={` absolute top-[70%] lg:top-[65%] right-[50%] translate-x-1/2 z-[900] bg-black/10 rounded-full p-2 overflow-hidden`}>
+      <motion.div
+        className={` absolute top-[70%] lg:top-[65%] right-[50%] translate-x-1/2 z-[900] bg-black/10 rounded-full p-2 overflow-hidden`}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}>
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 40 }}
@@ -22,7 +24,7 @@ const Scroll = () => {
           }}>
           <IoIosArrowDown />
         </motion.div>
-      </div>
+      </motion.div>
     </Link>
   );
 };

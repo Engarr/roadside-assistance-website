@@ -16,5 +16,5 @@ export const useIsSectionInView = (
       setActiveSection(sectionName);
     }
   }, [inView, sectionName, setActiveSection, timeOfLastClick]);
-  return { ref };
+  return { ref, inView };
 };

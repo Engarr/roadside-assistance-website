@@ -24,6 +24,7 @@ const MainSection = () => {
           quality={75}
           className='object-cover'
           fill
+          loading='lazy'
         />
       </motion.div>
       <div
