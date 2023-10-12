@@ -4,25 +4,16 @@ import { links } from '@/lib/data';
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { RxHamburgerMenu } from 'react-icons/rx';
-import { GrClose } from 'react-icons/gr';
+
 import { useActiveSection } from '@/context/activeSection-context';
 import clsx from 'clsx';
 import MenuToggleButton from '../menu-toggle-button';
 
-type PropsType = {
-  scrollPositionY: number;
-  isDesktop: boolean;
-};
-const Nav = ({ scrollPositionY, isDesktop }: PropsType) => {
+const Nav = () => {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSection();
   const [isMenuVisible, setIsMenuVisible] = useState(false);
 
-  const scrollClass =
-    scrollPositionY <= 0
-      ? 'lg:top-[6.5rem] bg-white text-black shadow-lg '
-      : 'lg:top-[2rem] bg-white lg:bg-transparent text-black shadow-none';
   const activeMenuHandler = () => {
     setIsMenuVisible((prev) => !prev);
   };
@@ -36,16 +27,6 @@ const Nav = ({ scrollPositionY, isDesktop }: PropsType) => {
     },
   };
 
-  const buttonAnimaion = {
-    hidden: { opacity: 0, y: -100, x: '0%' },
-    visible: {
-      opacity: 1,
-      y: 0,
-      x: '0%',
-      transition: { delay: 0.2 },
-    },
-  };
-
   return (
     <>
       <MenuToggleButton
@@ -55,7 +36,7 @@ const Nav = ({ scrollPositionY, isDesktop }: PropsType) => {
 
       <motion.nav
         className={`fixed flex items-center justify-start w-full h-full top-0 flex-col z-[990] text-sm desktop transition-all duration-300 
-         ${scrollClass} ${activeMenuCss}`}
+        lg:top-[3rem] bg-white lg:bg-transparent text-black shadow-none  ${activeMenuCss}`}
         variants={navVariantsAnimate}
         initial='hidden'
         animate='visible'>

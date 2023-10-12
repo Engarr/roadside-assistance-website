@@ -7,10 +7,9 @@ import { handleCall } from '@/lib/utils';
 
 type PropsType = {
   scrollPositionY: number;
-  isDesktop: boolean;
 };
 
-const Logo = ({ scrollPositionY, isDesktop }: PropsType) => {
+const Logo = ({ scrollPositionY }: PropsType) => {
   const scrollClassDiv =
     scrollPositionY <= 0
       ? 'lg:shadow-lg lg:bg-white lg:mt-[1.125rem]'
