@@ -8,7 +8,10 @@ const Contact = () => {
   const { ref } = useIsSectionInView('Kontakt');
 
   return (
-    <section ref={ref} id='kontakt' className='scroll-mt-34 min-h-[700px]'>
+    <section
+      ref={ref}
+      id='kontakt'
+      className='scroll-mt-36 mt-28 mb-28 min-h-[700px]'>
       <Title>Gdzie nas znaleźć?</Title>
     </section>
   );

@@ -40,7 +40,7 @@ const Description = ({ children, index }: DescriptionProps) => {
           once: true,
         }}
         custom={index}>
-        <BsThreeDots className='text-orange-500 text-2xl my-2' />
+        <BsThreeDots className='text-[var(--mainColor)] text-2xl my-2' />
       </motion.div>
     </>
   );

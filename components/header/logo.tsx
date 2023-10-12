@@ -28,7 +28,7 @@ const Logo = ({ scrollPositionY, isDesktop }: PropsType) => {
       animate={{ opacity: 1, y: 0 }}>
       <Link href='/' className='hover:scale-105 active:scale-95 transition-all'>
         <h1
-          className={`text-orange-500 font-bold mt-3 mr-3  uppercase  text-xl ${roboto_mono.className}  ${scrollClassH1} transition-all lg:mt-0 lg:mr-0 lg:text-2xl xl:text-4xl`}>
+          className={`text-[var(--mainColor)] font-bold mt-3 mr-3  uppercase  text-xl ${roboto_mono.className}  ${scrollClassH1} transition-all lg:mt-0 lg:mr-0 lg:text-2xl xl:text-4xl`}>
           Pomoc drogowa
         </h1>
       </Link>

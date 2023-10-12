@@ -19,7 +19,7 @@ const dropDown = {
 const Title = ({ children }: TitleProps) => {
   return (
     <motion.h2
-      className=' text-3xl lg:text-4xl mb-[4.25rem] tracking-wider text-orange-500 font-bold  w-full text-center'
+      className=' text-3xl lg:text-4xl mb-[4.25rem] tracking-wider text-[var(--mainColor)] font-bold  w-full text-center'
       variants={dropDown}
       whileInView='animate'
       initial='initial'

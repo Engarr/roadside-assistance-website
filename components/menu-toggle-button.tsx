@@ -7,15 +7,7 @@ type MenuToggleButtonProps = {
 };
 
 const Path = (props: any) => {
-  return (
-    <motion.path
-      fill='transparent'
-      strokeWidth='3'
-      stroke='hsl(0, 0%, 25%)'
-      strokeLinecap='round'
-      {...props}
-    />
-  );
+  return <motion.path strokeWidth='3' strokeLinecap='round' {...props} />;
 };
 
 const MenuToggleButton = ({ toggle, isMenuVisible }: MenuToggleButtonProps) => {
@@ -24,7 +16,12 @@ const MenuToggleButton = ({ toggle, isMenuVisible }: MenuToggleButtonProps) => {
       onClick={() => toggle((prev) => !prev)}
       className='fixed mt-4 ml-4 z-[999] lg:hidden'
       animate={isMenuVisible ? 'open' : 'closed'}>
-      <svg width='33' height='33' viewBox='0 0 33 33'>
+      <motion.svg
+        width='33'
+        height='33'
+        viewBox='0 0 33 33'
+        stroke='var(--mainColor)'
+    >
         <Path
           variants={{
             closed: { d: 'M 2 9.5 L 30 9.5' },
@@ -35,7 +32,7 @@ const MenuToggleButton = ({ toggle, isMenuVisible }: MenuToggleButtonProps) => {
           d='M 2 16.5 L 30 16.5'
           variants={{
             closed: { opacity: 1, x: 0, transition: { delay: 0.125 } },
-            open: { opacity: 0, x: -100 },
+            open: { opacity: 0, x: 100 },
           }}
           transition={{ duration: 0.1 }}
         />
@@ -45,7 +42,7 @@ const MenuToggleButton = ({ toggle, isMenuVisible }: MenuToggleButtonProps) => {
             open: { d: 'M 3 2.5 L 30 25.346' },
           }}
         />
-      </svg>
+      </motion.svg>
     </motion.button>
   );
 };
