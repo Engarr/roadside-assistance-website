@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className='!scroll-smooth'>
-      <body className={`${inter.className}  ${roboto_mono.className}`}>
+      <body className={`${inter.className} ${roboto_mono.className}`}>
         <ContextProvider>
           <Header />
           <main>{children}</main>

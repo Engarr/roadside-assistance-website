@@ -11,7 +11,6 @@ const Map = React.lazy(() => import('./map'));
 
 const Contact = () => {
   const { ref, inView } = useIsSectionInView('Kontakt');
-  console.log(inView);
   return (
     <section
       ref={ref}
