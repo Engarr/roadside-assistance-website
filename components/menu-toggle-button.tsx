@@ -15,13 +15,13 @@ const MenuToggleButton = ({ toggle, isMenuVisible }: MenuToggleButtonProps) => {
     <motion.button
       onClick={() => toggle((prev) => !prev)}
       className='fixed mt-4 ml-4 z-[999] lg:hidden'
-      animate={isMenuVisible ? 'open' : 'closed'}>
+      animate={isMenuVisible ? 'open' : 'closed'}
+      type='button'>
       <motion.svg
         width='33'
         height='33'
         viewBox='0 0 33 33'
-        stroke='var(--mainColor)'
-    >
+        stroke='var(--mainColor)'>
         <Path
           variants={{
             closed: { d: 'M 2 9.5 L 30 9.5' },

@@ -1,28 +1,29 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { useScrollPosition } from '@/context/scroll-position-context';
 import { IoIosArrowDown } from 'react-icons/io';
+import Link from 'next/link';
 
 const Scroll = () => {
-  const { scrollPositionY } = useScrollPosition();
-  const scrollCss = scrollPositionY > 200 ? 'opacity-0' : 'opacity-1';
-
   return (
-    <motion.div
-      className={`${scrollCss} absolute top-[60%] lg:top-[65%] right-[50%] translate-x-1/2 w-[55px] h-[70px] lg:w-[80px] lg:h-[60px] border-2 border-white/30 rounded-xl transition-all`}>
-      <motion.div
-        className='absolute  text-white/60 bottom-[20%] right-[50%]  text-3xl'
-        initial={{ opacity: 0, y: 0, x: '50%' }}
-        animate={{ opacity: 1, y: 15, x: '50%' }}
-        transition={{
-          ease: 'linear',
-          repeat: Infinity,
-          duration: 1,
-          repeatDelay: 0.8,
-        }}>
-        <IoIosArrowDown />
-      </motion.div>
-    </motion.div>
+    <Link
+      href='/#onas'
+      className='text-[var(--mainColor)] z-[90] cursor-pointer text-4xl'>
+      <div
+        className={` absolute top-[70%] lg:top-[65%] right-[50%] translate-x-1/2 z-[900] bg-black/10 rounded-full p-2 overflow-hidden`}>
+        <motion.div
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 40 }}
+          transition={{
+            repeat: Infinity,
+
+            duration: 2,
+            repeatType: 'loop',
+            ease: 'linear',
+          }}>
+          <IoIosArrowDown />
+        </motion.div>
+      </div>
+    </Link>
   );
 };
 

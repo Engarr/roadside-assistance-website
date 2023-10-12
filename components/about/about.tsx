@@ -29,8 +29,8 @@ const About = () => {
         </Description>
 
         <Description index={3}>
-          <span className='font-semibold'>Posiadamy sprzęt </span>, który
-          pozwala na przetransportowanie różnego rodzaju maszyn i urządzeń.
+          <span className='font-semibold'>Posiadamy sprzęt</span>, który pozwala
+          na przetransportowanie różnego rodzaju maszyn i urządzeń.
         </Description>
         <Description index={4}>
           W przypadku awarii czy kolizji,{' '}

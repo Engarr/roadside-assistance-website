@@ -4,9 +4,9 @@
 
 :root {
   --background: #f1f5f9;
-  --yellow300: #fde047;
-  --mainColor: #f97316;
-  --mainColorOpacity60: rgba(249, 116, 21, 0.6);
+  --mainColor: #d47500;
+  --mainColorOpacity60: rgb(212, 117, 0, 0.6);
+  --blue: #1e90ff;
 }
 
 /* @media (prefers-color-scheme: dark) {

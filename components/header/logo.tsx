@@ -9,7 +9,7 @@ type PropsType = {
   scrollPositionY: number;
 };
 
-const Logo = ({ scrollPositionY }: PropsType) => {
+const Logo = ({ scrollPositionY = 0 }: PropsType) => {
   const scrollClassDiv =
     scrollPositionY <= 0
       ? 'lg:shadow-lg lg:bg-white lg:mt-[1.125rem]'

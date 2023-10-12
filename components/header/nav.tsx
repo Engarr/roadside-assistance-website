@@ -8,10 +8,16 @@ import { useActiveSection } from '@/context/activeSection-context';
 import clsx from 'clsx';
 import MenuToggleButton from '../menu-toggle-button';
 
-const Nav = () => {
+type NavPropsType = {
+  scrollPositionY: number;
+};
+
+const Nav = ({ scrollPositionY = 0 }: NavPropsType) => {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
     useActiveSection();
   const [isMenuVisible, setIsMenuVisible] = useState(false);
+  const scrollClassLinks =
+    scrollPositionY <= 0 ? 'lg:top-[3rem]' : 'lg:top-[2rem]';
 
   const activeMenuHandler = () => {
     setIsMenuVisible((prev) => !prev);
@@ -34,8 +40,8 @@ const Nav = () => {
       />
 
       <motion.nav
-        className={`fixed flex items-center justify-start w-full h-full top-0 flex-col z-[990] text-sm desktop transition-all duration-300 
-        lg:top-[3rem] bg-white lg:bg-transparent text-black shadow-none  ${activeMenuCss}`}
+        className={`fixed flex items-center justify-start w-full h-full top-0 flex-col z-[999] text-sm desktop transition-all duration-300 
+         bg-white lg:bg-transparent text-black shadow-none  ${activeMenuCss} ${scrollClassLinks}`}
         variants={navVariantsAnimate}
         initial='hidden'
         animate='visible'>
@@ -49,12 +55,13 @@ const Nav = () => {
                 setIsMenuVisible(false);
                 setTimeOfLastClick(Date.now());
               }}
-              whileHover={{ scale: 1.05, originX: 0, color: '#38bdf8' }}
+              whileHover={{ scale: 1.05, originX: 0, color: 'var(--blue)' }}
               transition={{ type: 'spring', stiffness: 300 }}>
               <Link
                 href={link.link}
                 className={clsx('capitalize relative ', {
-                  'text-blue-400 font-semibold ': activeSection === link.name,
+                  'text-[var(--blue)] font-semibold ':
+                    activeSection === link.name,
                 })}>
                 {link.name}
               </Link>
