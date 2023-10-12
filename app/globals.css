@@ -6,6 +6,7 @@
   --background: #f1f5f9;
   --yellow300: #fde047;
   --mainColor: #f97316;
+  --mainColorOpacity60: rgba(249, 116, 21, 0.6);
 }
 
 /* @media (prefers-color-scheme: dark) {

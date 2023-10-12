@@ -1,11 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import clsx from 'clsx';
 
 type TitleProps = {
   children: React.ReactNode;
+  textSize?: string;
+  mb?: string;
 };
 
-const dropDown = {
+export const dropDownVariants = {
   initial: {
     opacity: 0,
     y: -100,
@@ -16,11 +19,19 @@ const dropDown = {
   },
 };
 
-const Title = ({ children }: TitleProps) => {
+const Title = ({
+  children,
+  textSize = 'text-3xl lg:text-4xl',
+  mb = ' mb-[4.25rem]',
+}: TitleProps) => {
   return (
     <motion.h2
-      className=' text-3xl lg:text-4xl mb-[4.25rem] tracking-wider text-[var(--mainColor)] font-bold  w-full text-center'
-      variants={dropDown}
+      className={clsx(
+        'tracking-wider text-[var(--mainColor)] font-bold  w-full text-center px-1 lg:px-0',
+        textSize,
+        mb
+      )}
+      variants={dropDownVariants}
       whileInView='animate'
       initial='initial'
       viewport={{

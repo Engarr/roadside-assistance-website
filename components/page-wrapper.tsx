@@ -16,7 +16,6 @@ const PageWrapperVaraints = {
   visible: {
     opacity: 1,
     x: 0,
-    transition: { when: 'beforeChildren' },
   },
   exit: {
     opacity: 0,
