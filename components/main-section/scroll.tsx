@@ -21,9 +21,11 @@ const Scroll = () => {
             duration: 2,
             repeatType: 'loop',
             ease: 'linear',
-          }}>
+          }}
+          className='flex flex-col'>
           <IoIosArrowDown />
         </motion.div>
+        <p className='hidden'>O nas</p>
       </motion.div>
     </Link>
   );

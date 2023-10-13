@@ -6,13 +6,15 @@ const Footer = () => {
   const year = new Date().getFullYear();
 
   return (
-    <footer className='z-[999] relative mb-10 px-4 text-center text-gray-500'>
+    <footer className='z-[999] relative mb-10 px-4 text-center text-gray-950 '>
       <small className='mb-2 text-xs block'>
         &copy; {year}. Wszelkie prawa zastrzeżone - TRANSWOS Stanisław Woś.
       </small>
       <p className='text-xs'>
         Zapoznaj się z{' '}
-        <Link href='/polityka' className='font-semibold text-[var(--blue)]'>
+        <Link
+          href='/polityka'
+          className='font-semibold text-[var(--darkBlue)] hover:text-[var(--blue)] transition-all'>
           polityką prywatności cookies
         </Link>{' '}
       </p>

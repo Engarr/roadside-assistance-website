@@ -7,6 +7,9 @@
   --mainColor: #d47500;
   --mainColorOpacity60: rgb(212, 117, 0, 0.6);
   --blue: #1e90ff;
+  --darkBlue: #0847a5;
+  --green: #00aa00;
+  --white: #ffffff;
 }
 
 /* @media (prefers-color-scheme: dark) {

@@ -66,7 +66,7 @@ const MainSection = () => {
         <p className='flex flex-col lg:flex-row items-center justify-center text-center tracking-wide text-base lg:text-2xl'>
           Potrzebujesz pomocy?
           <motion.button
-            className=' mt-1 lg:mt-0 text-white bg-[#00AA00] py-2 lg:ml-4  rounded-3xl text-center flex justify-center items-center w-full lg:w-[180px] lg:text-xl border border-white/20 sm:cursor-pointer'
+            className=' mt-1 lg:mt-0 text-[var(--white)] bg-[var(--green)] py-2 lg:ml-4  rounded-3xl text-center flex justify-center items-center w-full lg:w-[180px] lg:text-xl border border-white/20 sm:cursor-pointer'
             whileHover={{
               scale: 1.1,
               transition: {
