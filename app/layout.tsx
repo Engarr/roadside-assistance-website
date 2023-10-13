@@ -4,6 +4,7 @@ import type { Metadata } from 'next';
 import { inter } from '@/lib/fonts';
 
 import ContextProvider from '@/context/context-provider';
+import Footer from '@/components/footer/footer';
 
 export const metadata: Metadata = {
   title: 'Pomoc Drogowa | Transwoś Stanisław Woś',
@@ -21,6 +22,7 @@ export default function RootLayout({
         <ContextProvider>
           <Header />
           <main>{children}</main>
+          <Footer />
         </ContextProvider>
       </body>
     </html>

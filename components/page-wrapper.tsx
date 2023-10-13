@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 type PageWrapperType = {
   children: React.ReactNode;
@@ -25,6 +25,10 @@ const PageWrapperVaraints = {
 
 export const PageWrapper = ({ children }: PageWrapperType) => {
   const pathname = usePathname();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
   return (
     <AnimatePresence mode='wait'>
       <motion.div

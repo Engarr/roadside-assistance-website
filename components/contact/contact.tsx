@@ -25,10 +25,7 @@ const Contact = () => {
   //   }
   // }, [inView]);
   return (
-    <section
-      ref={ref}
-      id='kontakt'
-      className='scroll-mt-36 mt-28 mb-28 min-h-[63.75rem]'>
+    <section ref={ref} id='kontakt' className='scroll-mt-36 mt-28 mb-28'>
       <Title>Gdzie nas znaleźć?</Title>
       <div className=' flex text-center justify-around lg:flex-row flex-col-reverse p-1'>
         <motion.div

@@ -18,3 +18,7 @@ export const useIsSectionInView = (
   }, [inView, sectionName, setActiveSection, timeOfLastClick]);
   return { ref, inView };
 };
+
+export const scrollToTop = () => {
+  window.scrollTo(0, 0);
+};
