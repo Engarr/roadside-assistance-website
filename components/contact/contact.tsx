@@ -1,21 +1,34 @@
 'use client';
 
 import { useIsSectionInView } from '@/lib/hook';
-import React, { Suspense } from 'react';
+import React, { Suspense, useState, useEffect } from 'react';
 import Title from '../title';
 import { motion } from 'framer-motion';
 import { GoLocation } from 'react-icons/go';
 import { dropDownVariants } from '../title';
+import Loader from '../loader';
 
 const Map = React.lazy(() => import('./map'));
 
 const Contact = () => {
-  const { ref, inView } = useIsSectionInView('Kontakt');
+  const { ref, inView } = useIsSectionInView('Kontakt', 0.5);
+  // const [isLoading, setLoading] = useState(true);
+  // useEffect(() => {
+  //   if (inView) {
+  //     const timeout = setTimeout(() => {
+  //       setLoading(false);
+  //     }, 1000);
+
+  //     return () => {
+  //       clearTimeout(timeout);
+  //     };
+  //   }
+  // }, [inView]);
   return (
     <section
       ref={ref}
       id='kontakt'
-      className='scroll-mt-36 mt-28 mb-28 min-h-[43.75rem]'>
+      className='scroll-mt-36 mt-28 mb-28 min-h-[63.75rem]'>
       <Title>Gdzie nas znaleźć?</Title>
       <div className=' flex text-center justify-around lg:flex-row flex-col-reverse p-1'>
         <motion.div
@@ -27,7 +40,8 @@ const Contact = () => {
             once: true,
           }}>
           {inView && (
-            <Suspense fallback={<div>Pobierania mapy...</div>}>
+            <Suspense fallback={<Loader />}>
+              {/* {isLoading ? <Loader /> : <Map />} */}
               <Map />
             </Suspense>
           )}

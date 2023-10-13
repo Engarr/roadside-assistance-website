@@ -1,7 +1,7 @@
 import Header from '@/components/header/header';
 import './globals.css';
 import type { Metadata } from 'next';
-import { inter, roboto_mono } from '@/lib/fonts';
+import { inter } from '@/lib/fonts';
 
 import ContextProvider from '@/context/context-provider';
 
@@ -17,7 +17,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang='en' className='!scroll-smooth'>
-      <body className={`${inter.className} ${roboto_mono.className}`}>
+      <body className={`${inter.className} `}>
         <ContextProvider>
           <Header />
           <main>{children}</main>

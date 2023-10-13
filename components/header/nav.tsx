@@ -40,7 +40,7 @@ const Nav = ({ scrollPositionY = 0 }: NavPropsType) => {
       />
 
       <motion.nav
-        className={`fixed flex items-center justify-start w-full h-full top-0 flex-col z-[999] text-sm desktop transition-all duration-300 
+        className={`fixed flex items-center justify-start w-full h-full top-0 flex-col z-[990] text-sm desktop transition-all duration-300 
          bg-white lg:bg-transparent text-black shadow-none  ${activeMenuCss} ${scrollClassLinks}`}
         variants={navVariantsAnimate}
         initial='hidden'
