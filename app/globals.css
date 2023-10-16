@@ -5,7 +5,8 @@
 :root {
   --background: #f1f5f9;
   --mainColor: #d47500;
-  --mainColorOpacity60: rgb(212, 117, 0, 0.6);
+  --mainColorOpacity60: rgba(212, 117, 0, 0.6);
+  --mainColorOpacity30: rgba(212, 117, 0, 0.3);
   --blue: #1e90ff;
   --darkBlue: #0847a5;
   --green: #00aa00;
