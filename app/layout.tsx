@@ -5,6 +5,7 @@ import { inter } from '@/lib/fonts';
 
 import ContextProvider from '@/context/context-provider';
 import Footer from '@/components/footer/footer';
+import Cookie from '@/components/cookie';
 
 export const metadata: Metadata = {
   title: 'Pomoc Drogowa | Transwoś Stanisław Woś',
@@ -23,6 +24,7 @@ export default function RootLayout({
           <Header />
           <main>{children}</main>
           <Footer />
+          <Cookie />
         </ContextProvider>
       </body>
     </html>
