@@ -9,7 +9,6 @@ import { ArrowSVG } from '@/lib/arrowSvg';
 
 const Offer = () => {
   const { ref } = useIsSectionInView('Oferta', 0.5);
-  // var(--mainColorOpacity60)
   return (
     <section
       ref={ref}
