@@ -40,7 +40,7 @@ const PhotoSlider = () => {
   };
   return (
     <>
-      <div className='w-full flexCenter relative left-1/2 -translate-x-1/2 gap-10 '>
+      <div className='w-full flexCenter relative left-1/2 -translate-x-1/2 gap-10 mb-2 '>
         <SwitchButton arrowDirection={-5} onClick={() => photoHandler(1)}>
           <AiOutlineArrowLeft />
         </SwitchButton>
@@ -48,7 +48,7 @@ const PhotoSlider = () => {
           <AiOutlineArrowRight />
         </SwitchButton>
       </div>
-      <motion.div className=' relative left-1/2 -translate-x-1/2 flexCenter shadow-lg w-full lg:w-[50%] h-[550px]  overflow-hidden'>
+      <motion.div className=' relative left-1/2 -translate-x-1/2 flexCenter shadow-lg w-full sm:w-[80%] lg:w-[50%] h-[15.75rem] sm:h-[25.375rem] lg:h-[33.125rem] overflow-hidden'>
         <AnimatePresence initial={false} custom={direction}>
           <motion.img
             key={photoIndex}
@@ -73,7 +73,7 @@ const PhotoSlider = () => {
                 photoHandler(-1);
               }
             }}
-            className='absolute  h-auto w-auto max-w-[90%] rounded-sm cursor-grab'
+            className='absolute h-auto w-auto max-w-[95%] object-cover rounded-sm cursor-grab '
             whileTap={{ cursor: 'grabbing' }}
           />
         </AnimatePresence>

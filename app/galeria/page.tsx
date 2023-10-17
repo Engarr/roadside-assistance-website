@@ -13,7 +13,7 @@ const Gallery = () => {
   return (
     <PageWrapper>
       <section ref={ref} className='mt-36 h-[100vh]' id='galeria'>
-        <Title>Galeria zdjęć</Title>
+        <Title mb='mb-[1.25rem] lg:mb-[4.25rem]'>Galeria zdjęć</Title>
 
         <PhotoSlider />
       </section>
