@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-export const ArrowSVG = () => {
+export const GearSvg = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}

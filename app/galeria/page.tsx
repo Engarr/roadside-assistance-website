@@ -5,21 +5,17 @@ import { PageWrapper } from '@/components/page-wrapper';
 import { motion } from 'framer-motion';
 import { useIsSectionInView } from '@/lib/hook';
 
+import Title from '@/components/title';
+import PhotoSlider from '@/components/photo-slider/photo-slider';
+
 const Gallery = () => {
   const { ref } = useIsSectionInView('Galeria');
   return (
     <PageWrapper>
-      <section ref={ref} className='mt-28 h-[100vh] flexCenter' id='galeria'>
-        <h2 className='font-semibold text-center text-3xl text-[var(--mainColor)] capitalize flexCenter flex-col'>
-          Jeszcze nic tu nie ma...{' '}
-          <motion.span
-            className='text-5xl'
-            initial={{ opacity: 0, x: 100 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.5 }}>
-            🚚
-          </motion.span>
-        </h2>
+      <section ref={ref} className='mt-36 h-[100vh]' id='galeria'>
+        <Title>Galeria zdjęć</Title>
+
+        <PhotoSlider />
       </section>
     </PageWrapper>
   );

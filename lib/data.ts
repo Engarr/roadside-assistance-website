@@ -58,3 +58,10 @@ export const polityc = [
       'Operator Serwisu informuje, że zmiany ustawień w przeglądarce internetowej użytkownika mogą ograniczyć dostęp do niektórych funkcji strony internetowej serwisu. Pliki (cookies) z których korzysta serwis (zamieszczane w urządzeniu końcowym użytkownika) mogą być udostępnione jego partnerom oraz współpracującym z nim reklamodawcą. Informacje dotyczące ustawień przeglądarek internetowych dostępne są w jej menu (pomoc) lub na stronie jej producenta. Bardziej szczegółowe informacje na temat plików (cookies) dostępne są na stronie ciasteczka.org.pl',
   },
 ] as const;
+
+export const imagesPaths = [
+  '/images/333242217_526028576318165_996668996135343305_n.jpg',
+  '/images/333445182_756599999374793_2499658063319991975_n.jpg',
+  '/images/333626219_587718386632056_2410935324231722916_n.jpg',
+  '/images/370056219_662553392612122_1630923149949011807_n.jpg',
+];
