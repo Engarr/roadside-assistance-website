@@ -10,7 +10,7 @@ import SwitchButton from './switch-button';
 const variants = {
   enter: (direction: number) => {
     return {
-      x: direction > 0 ? 1000 : -1000,
+      x: direction > 0 ? 1500 : -1500,
     };
   },
   center: {
@@ -20,11 +20,11 @@ const variants = {
   exit: (direction: number) => {
     return {
       zIndex: 0,
-      x: direction < 0 ? 1000 : -1000,
+      x: direction < 0 ? 1500 : -1500,
     };
   },
 };
-const swipeConfidenceThreshold = 1000;
+const swipeConfidenceThreshold = 1500;
 const swipePower = (offset: number, velocity: number) => {
   return Math.abs(offset) * velocity;
 };
@@ -40,7 +40,7 @@ const PhotoSlider = () => {
   };
   return (
     <>
-      <div className='w-full flexCenter relative left-1/2 -translate-x-1/2 gap-10 mb-2 '>
+      <div className='w-full flexCenter relative left-1/2 -translate-x-1/2 gap-10 mb-4 '>
         <SwitchButton arrowDirection={-5} onClick={() => photoHandler(1)}>
           <AiOutlineArrowLeft />
         </SwitchButton>
@@ -48,7 +48,7 @@ const PhotoSlider = () => {
           <AiOutlineArrowRight />
         </SwitchButton>
       </div>
-      <motion.div className=' relative left-1/2 -translate-x-1/2 flexCenter shadow-lg w-full sm:w-[80%] lg:w-[50%] h-[15.75rem] sm:h-[25.375rem] lg:h-[33.125rem] overflow-hidden'>
+      <motion.div className=' relative left-1/2 -translate-x-1/2 flexCenter shadow-lg w-full sm:w-[80%] lg:w-[60%] h-[15.75rem] sm:h-[26.375rem] lg:h-[28.125rem] xl:h-[32.125rem] 2xl:h-[36.125rem] 3xl:h-[45.125rem]    overflow-hidden '>
         <AnimatePresence initial={false} custom={direction}>
           <motion.img
             key={photoIndex}
@@ -73,7 +73,7 @@ const PhotoSlider = () => {
                 photoHandler(-1);
               }
             }}
-            className='absolute h-auto w-auto max-w-[95%] object-cover rounded-sm cursor-grab '
+            className='absolute h-auto w-[95%]  lg:max-w-[85%] rounded-sm cursor-grab '
             whileTap={{ cursor: 'grabbing' }}
           />
         </AnimatePresence>
