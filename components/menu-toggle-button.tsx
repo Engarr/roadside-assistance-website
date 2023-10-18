@@ -14,7 +14,7 @@ const MenuToggleButton = ({ toggle, isMenuVisible }: MenuToggleButtonProps) => {
   return (
     <motion.button
       onClick={() => toggle((prev) => !prev)}
-      className='fixed mt-4 ml-4 z-[999] lg:hidden px-1 outline-[var(--mainColorOpacity30)]'
+      className='fixed mt-4 ml-4 z-[999] lg:hidden p-1 outline-[var(--mainColorOpacity30)]'
       animate={isMenuVisible ? 'open' : 'closed'}
       type='button'
       title='nav-btn'>
@@ -26,7 +26,7 @@ const MenuToggleButton = ({ toggle, isMenuVisible }: MenuToggleButtonProps) => {
         <Path
           variants={{
             closed: { d: 'M 2 9.5 L 30 9.5' },
-            open: { d: 'M 3 25.5 L 30 2.5' },
+            open: { d: 'M 1.5 29 L 31 5' },
           }}
         />
         <Path
@@ -40,7 +40,7 @@ const MenuToggleButton = ({ toggle, isMenuVisible }: MenuToggleButtonProps) => {
         <Path
           variants={{
             closed: { d: 'M 2 23.5 L 30 23.5' },
-            open: { d: 'M 3 2.5 L 30 25.346' },
+            open: { d: 'M 2 5 L 31.5 29' },
           }}
         />
       </motion.svg>

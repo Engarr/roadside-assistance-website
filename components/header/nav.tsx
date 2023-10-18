@@ -45,7 +45,7 @@ const Nav = ({ scrollPositionY = 0 }: NavPropsType) => {
         variants={navVariantsAnimate}
         initial='hidden'
         animate='visible'>
-        <ul className='flexCenter flex-col text-xl  mt-[6.25rem] md:text-sm lg:gap-2 lg:flex-row lg:mt-0 xl:gap-2 xl:text-base'>
+        <ul className='flexCenter flex-col text-xl mt-[6.25rem] md:text-sm lg:gap-2 lg:flex-row lg:mt-0 xl:gap-2 xl:text-base '>
           {links.map((link, index) => (
             <motion.li
               key={index}
