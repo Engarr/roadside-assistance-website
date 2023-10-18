@@ -14,7 +14,7 @@ const MenuToggleButton = ({ toggle, isMenuVisible }: MenuToggleButtonProps) => {
   return (
     <motion.button
       onClick={() => toggle((prev) => !prev)}
-      className='fixed mt-4 ml-4 z-[999] lg:hidden'
+      className='fixed mt-4 ml-4 z-[999] lg:hidden px-1 outline-[var(--mainColorOpacity30)]'
       animate={isMenuVisible ? 'open' : 'closed'}
       type='button'
       title='nav-btn'>

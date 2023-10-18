@@ -73,7 +73,7 @@ const PhotoSlider = () => {
                 photoHandler(-1);
               }
             }}
-            className='absolute h-auto w-[95%]  lg:max-w-[85%] rounded-sm cursor-grab '
+            className='absolute h-auto w-[95%]  lg:max-w-[85%] rounded-sm cursor-grab outline-[var(--mainColorOpacity30)]'
             whileTap={{ cursor: 'grabbing' }}
           />
         </AnimatePresence>

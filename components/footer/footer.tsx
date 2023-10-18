@@ -14,7 +14,7 @@ const Footer = () => {
         Zapoznaj się z{' '}
         <Link
           href='/polityka'
-          className='font-semibold text-[var(--darkBlue)] hover:text-[var(--blue)] transition-all'>
+          className='font-semibold text-[var(--darkBlue)] hover:text-[var(--blue)] transition-all outline-[var(--mainColorOpacity30)]'>
           polityką prywatności cookies
         </Link>{' '}
       </p>

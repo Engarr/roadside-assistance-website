@@ -16,18 +16,20 @@ const Logo = ({ scrollPositionY = 0 }: PropsType) => {
       : 'lg:shadow-none';
   const scrollClassH1 =
     scrollPositionY <= 0
-      ? 'xl:text-3xl lg:mt-4 tracking-normal xl:tracking-wider'
+      ? 'xl:text-3xl mt-3 lg:mt-2 tracking-normal xl:tracking-wider'
       : 'tracking-normal lg:mt-0';
   const scrollClassDivData =
     scrollPositionY <= 0 ? 'opacity-1 lg:h-[60px] ' : 'opacity-0 lg:h-[5px]';
   return (
     <motion.div
-      className={` flexCenter flex-col fixed right-0 lg:right-10 top-0 mt-0  ${scrollClassDiv} lg:w-[20.125rem] lg:rounded-sm lg:p-3 xl:w-[28.125rem] transition-all duration-300 z-[999]`}
+      className={` flexCenter flex-col fixed right-0 lg:right-10 top-0 mt-0  ${scrollClassDiv} lg:w-[20.125rem] lg:rounded-sm lg:p-3 xl:w-[28.125rem] transition-all duration-300 z-[999] pr-2 lg:pr-0`}
       initial={{ opacity: 0, y: -100 }}
       animate={{ opacity: 1, y: 0 }}>
-      <Link href='/' className='hover:scale-105 active:scale-95 transition-all'>
+      <Link
+        href='/'
+        className='hover:scale-105 active:scale-95 transition-all outline-[var(--mainColorOpacity30)] px-2'>
         <h1
-          className={`text-[var(--mainColor)] font-bold mt-3 mr-3  uppercase  text-xl ${roboto_mono.className}  ${scrollClassH1} transition-all lg:mt-0 lg:mr-0 lg:text-2xl xl:text-4xl`}>
+          className={`text-[var(--mainColor)] font-bold  uppercase text-xl ${roboto_mono.className}  ${scrollClassH1} transition-all lg:text-2xl xl:text-4xl`}>
           Pomoc drogowa
         </h1>
       </Link>
@@ -37,9 +39,9 @@ const Logo = ({ scrollPositionY = 0 }: PropsType) => {
         <p className='text-sm mb-2 xl:text-base'>Stanisław Woś</p>
       </div>
       <div
-        className='flex items-center justify-center text-lg z-[900]'
+        className='flex items-center justify-center text-lg z-[999]'
         onClick={handleCall}>
-        <motion.p className='flexCenter hover:scale-105 active:scale-95 transition-all cursor-pointer'>
+        <motion.p className='flexCenter hover:scale-105 active:scale-95 transition-all cursor-pointer outline-[var(--mainColorOpacity30)]'>
           <CgPhone className='text-green-700 ' />
 
           <span className={`font-semibold pl-1 ${roboto_mono.className}`}>

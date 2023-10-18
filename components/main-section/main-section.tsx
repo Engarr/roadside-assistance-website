@@ -60,13 +60,12 @@ const MainSection = () => {
 
       <motion.div
         className='flexCenter absolute bottom-0  bg-[var(--mainColorOpacity60)] w-full text-white font-bold z-[100] py-3 px-2 lg:py-5 text-sm xl:text-2xl shadow-xl '
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1 }}>
-        <p className='flex flex-col lg:flex-row items-center justify-center text-center tracking-wide text-base lg:text-2xl'>
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}>
+        <p className='flex flex-col lg:flex-row items-center justify-center text-center tracking-wide text-base lg:text-2xl '>
           Potrzebujesz pomocy?
           <motion.button
-            className=' mt-1 lg:mt-0 text-[var(--white)] bg-[var(--green)] py-2 lg:ml-4  rounded-3xl text-center flex justify-center items-center w-full lg:w-[180px] lg:text-xl border border-white/20 sm:cursor-pointer'
+            className=' mt-1 lg:mt-0 text-[var(--white)] bg-[var(--green)] py-2 lg:ml-4  rounded-3xl text-center flex justify-center items-center w-full lg:w-[180px] lg:text-xl border border-white/20 sm:cursor-pointer outline-[var(--darkGreen)]'
             whileHover={{
               scale: 1.1,
               transition: {

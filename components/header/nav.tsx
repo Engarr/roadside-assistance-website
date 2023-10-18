@@ -45,7 +45,7 @@ const Nav = ({ scrollPositionY = 0 }: NavPropsType) => {
         variants={navVariantsAnimate}
         initial='hidden'
         animate='visible'>
-        <ul className='flexCenter flex-col text-xl xl:p-4 lg:p-4 mt-[6.25rem] md:text-sm lg:gap-4 lg:flex-row lg:mt-0 xl:gap-5 xl:text-base'>
+        <ul className='flexCenter flex-col text-xl  mt-[6.25rem] md:text-sm lg:gap-2 lg:flex-row lg:mt-0 xl:gap-2 xl:text-base'>
           {links.map((link, index) => (
             <motion.li
               key={index}
@@ -59,10 +59,13 @@ const Nav = ({ scrollPositionY = 0 }: NavPropsType) => {
               transition={{ type: 'spring', stiffness: 300 }}>
               <Link
                 href={link.link}
-                className={clsx('capitalize relative ', {
-                  'text-[var(--blue)] font-semibold ':
-                    activeSection === link.name,
-                })}>
+                className={clsx(
+                  'capitalize relative outline-[var(--mainColorOpacity30)] rounded-md px-4 py-2',
+                  {
+                    'text-[var(--blue)] font-semibold ':
+                      activeSection === link.name,
+                  }
+                )}>
                 {link.name}
               </Link>
             </motion.li>
