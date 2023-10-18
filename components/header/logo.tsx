@@ -13,16 +13,16 @@ const Logo = ({ scrollPositionY = 0 }: PropsType) => {
   const scrollClassDiv =
     scrollPositionY <= 0
       ? 'lg:shadow-lg lg:bg-white lg:mt-[1.125rem]'
-      : 'lg:shadow-none';
+      : 'lg:shadow-none lg:mt-0';
   const scrollClassH1 =
     scrollPositionY <= 0
-      ? 'xl:text-3xl mt-3 lg:mt-2 tracking-normal xl:tracking-wider'
+      ? 'xl:text-3xl mt-0 lg:mt-2 tracking-normal xl:tracking-wider'
       : 'tracking-normal lg:mt-0';
   const scrollClassDivData =
     scrollPositionY <= 0 ? 'opacity-1 lg:h-[60px] ' : 'opacity-0 lg:h-[5px]';
   return (
     <motion.div
-      className={` flexCenter flex-col fixed right-0 lg:right-10 top-0 mt-0  ${scrollClassDiv} lg:w-[20.125rem] lg:rounded-sm lg:p-3 xl:w-[28.125rem] transition-all duration-300 z-[999] pr-2 lg:pr-0`}
+      className={` flexCenter flex-col fixed right-0 lg:right-10 top-0 mt-[1.125rem]  ${scrollClassDiv} lg:w-[20.125rem] lg:rounded-sm lg:p-3 xl:w-[28.125rem] transition-all duration-300 z-[999] pr-2 lg:pr-0`}
       initial={{ opacity: 0, y: -100 }}
       animate={{ opacity: 1, y: 0 }}>
       <Link
