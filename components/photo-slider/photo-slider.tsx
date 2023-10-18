@@ -40,7 +40,7 @@ const PhotoSlider = () => {
   };
   return (
     <>
-      <div className='w-full flexCenter relative left-1/2 -translate-x-1/2 gap-10 mb-4 '>
+      <div className='w-full flexCenter relative left-1/2 -translate-x-1/2  mb-4 gap-20 lg:gap-10'>
         <SwitchButton arrowDirection={-5} onClick={() => photoHandler(1)}>
           <AiOutlineArrowLeft />
         </SwitchButton>

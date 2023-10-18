@@ -11,7 +11,7 @@ const SwitchButton = ({ children, arrowDirection, onClick }: ButtonType) => {
   return (
     <motion.div
       onClick={onClick}
-      className='rounded-xl shadow-xl p-3 text-xl cursor-pointer mr-2'
+      className='rounded-xl shadow-xl p-3 text-xl cursor-pointer'
       whileHover={{ x: arrowDirection, scale: 1.05 }}
       whileTap={{ scale: 0.95 }}>
       {children}
