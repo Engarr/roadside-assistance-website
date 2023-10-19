@@ -55,28 +55,26 @@ const PhotoSlider = () => {
   return (
     <>
       <div className='w-[200px] h-[50px] flex justify-between relative left-1/2 -translate-x-1/2 '>
-        {imageIndex !== 0 && (
-          <SwitchButton
-            styleClass='left-0 absolute'
-            arrowDirection={-5}
-            actionHandler={() => {
-              photoHandler(-1);
-              nextHandler('left');
-            }}>
-            <AiOutlineArrowLeft />
-          </SwitchButton>
-        )}
-        {imageIndex !== imagesPaths.length - 1 && (
-          <SwitchButton
-            styleClass='right-0 absolute'
-            arrowDirection={5}
-            actionHandler={() => {
-              photoHandler(1);
-              nextHandler('right');
-            }}>
-            <AiOutlineArrowRight />
-          </SwitchButton>
-        )}
+        <SwitchButton
+          condition={imageIndex !== 0}
+          styleClass='left-0 absolute'
+          arrowDirection={-5}
+          actionHandler={() => {
+            photoHandler(-1);
+            nextHandler('left');
+          }}>
+          <AiOutlineArrowLeft />
+        </SwitchButton>
+        <SwitchButton
+          condition={imageIndex !== imagesPaths.length - 1}
+          styleClass='right-0 absolute'
+          arrowDirection={5}
+          actionHandler={() => {
+            photoHandler(1);
+            nextHandler('right');
+          }}>
+          <AiOutlineArrowRight />
+        </SwitchButton>
       </div>
       <motion.div className=' relative left-1/2 -translate-x-1/2 flexCenter shadow-lg w-full sm:w-[80%] lg:w-[60%] h-[15.75rem] sm:h-[26.375rem] lg:h-[28.125rem] xl:h-[32.125rem] 2xl:h-[36.125rem] 3xl:h-[45.125rem]    overflow-hidden '>
         <AnimatePresence initial={false} custom={direction}>

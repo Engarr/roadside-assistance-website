@@ -22,28 +22,28 @@ const PhotoBar = ({
 }: PhotoBarType) => {
   return (
     <div className=' w-1/2 left-1/2 -translate-x-1/2 relative sm:w-[50%] lg:w-[40%] hidden sm:block my-[50px]'>
-      {imageIndex !== 0 && (
-        <SwitchButton
-          arrowDirection={-5}
-          actionHandler={() => {
-            nextHandler('left');
-            setPhotoIndex((prev) => [prev[0] - 1, -1]);
-          }}
-          styleClass='-left-[50px] top-[40px] absolute '>
-          <AiOutlineArrowLeft />
-        </SwitchButton>
-      )}
-      {imageIndex !== imagesPaths.length - 1 && (
-        <SwitchButton
-          arrowDirection={5}
-          actionHandler={() => {
-            nextHandler('right');
-            setPhotoIndex((prev) => [prev[0] + 1, 1]);
-          }}
-          styleClass='-right-[50px] top-[40px] absolute'>
-          <AiOutlineArrowRight />
-        </SwitchButton>
-      )}
+      <SwitchButton
+        arrowDirection={-5}
+        condition={imageIndex !== 0}
+        actionHandler={() => {
+          nextHandler('left');
+          setPhotoIndex((prev) => [prev[0] - 1, -1]);
+        }}
+        styleClass='-left-[50px] top-[40px] absolute '>
+        <AiOutlineArrowLeft />
+      </SwitchButton>
+
+      <SwitchButton
+        arrowDirection={5}
+        condition={imageIndex !== imagesPaths.length - 1}
+        actionHandler={() => {
+          nextHandler('right');
+          setPhotoIndex((prev) => [prev[0] + 1, 1]);
+        }}
+        styleClass='-right-[50px] top-[40px] absolute'>
+        <AiOutlineArrowRight />
+      </SwitchButton>
+
       <div
         ref={photoBarRef}
         className={`relative w-full flex my-5 justify-start  photoBar  `}>
