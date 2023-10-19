@@ -1,7 +1,7 @@
 'use client';
 
 import { useIsSectionInView } from '@/lib/hook';
-import React, { Suspense, useState, useEffect } from 'react';
+import React, { Suspense } from 'react';
 import Title from '../title';
 import { motion } from 'framer-motion';
 import { GoLocation } from 'react-icons/go';

@@ -38,3 +38,10 @@ body {
 .desktop {
   @apply lg:h-12 lg:left-[1%] lg:rounded-sm xl:text-base lg:w-auto lg:justify-center;
 }
+.photoBar {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+.photoBar::-webkit-scrollbar {
+  display: none;
+}

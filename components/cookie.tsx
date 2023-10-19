@@ -23,13 +23,14 @@ const Cookie = () => {
           <motion.div
             className='fixed bottom-0 lg:right-0 lg:bottom-1 lg:w-auto lg:max-w-[350px] h-auto z-[999] bg-[var(--white)] shadow-md shadow-white/25 rounded-sm p-2 m-0 lg:p-5  lg:m-2 '
             key='cookie-banner'
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: 100, display: 'none' }}
             animate={{
               opacity: 1,
               y: 0,
               transition: { delay: 0.5 },
+              display: 'block',
             }}
-            exit={{ opacity: 0, y: 100 }}>
+            exit={{ opacity: 0, y: 100, display: 'none' }}>
             <div className=' p-0 mb-0 lg:p-1 lg:mb-2'>
               <CookieSVG
                 width='w-[50px] lg:w-[80px]'

@@ -1,11 +1,11 @@
 'use client';
 
 import { imagesPaths } from '@/lib/data';
-import Image from 'next/image';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 import SwitchButton from './switch-button';
+import PhotoBar from './photo-bar';
 
 const variants = {
   enter: (direction: number) => {
@@ -34,19 +34,49 @@ const PhotoSlider = () => {
   const imageIndex =
     ((photoIndex % imagesPaths.length) + imagesPaths.length) %
     imagesPaths.length;
+  const imageRef = useRef<HTMLDivElement | null>(null);
+  const photoBarRef = useRef<HTMLDivElement | null>(null);
+  const imageWidth = (imageRef?.current?.clientWidth ?? 0) + 4;
 
   const photoHandler = (newDirection: number) => {
     setPhotoIndex([photoIndex + newDirection, newDirection]);
   };
+
+  const nextHandler = (direction: string) => {
+    if (photoBarRef && photoBarRef.current) {
+      if (direction === 'left') {
+        photoBarRef.current.scrollLeft -= imageWidth;
+      } else {
+        photoBarRef.current.scrollLeft += imageWidth;
+      }
+    }
+  };
+
   return (
     <>
-      <div className='w-full flexCenter relative left-1/2 -translate-x-1/2  mb-4 gap-20 lg:gap-10'>
-        <SwitchButton arrowDirection={-5} onClick={() => photoHandler(-1)}>
-          <AiOutlineArrowLeft />
-        </SwitchButton>
-        <SwitchButton arrowDirection={5} onClick={() => photoHandler(1)}>
-          <AiOutlineArrowRight />
-        </SwitchButton>
+      <div className='w-[200px] h-[50px] flex justify-between relative left-1/2 -translate-x-1/2 '>
+        {imageIndex !== 0 && (
+          <SwitchButton
+            styleClass='left-0 absolute'
+            arrowDirection={-5}
+            actionHandler={() => {
+              photoHandler(-1);
+              nextHandler('left');
+            }}>
+            <AiOutlineArrowLeft />
+          </SwitchButton>
+        )}
+        {imageIndex !== imagesPaths.length - 1 && (
+          <SwitchButton
+            styleClass='right-0 absolute'
+            arrowDirection={5}
+            actionHandler={() => {
+              photoHandler(1);
+              nextHandler('right');
+            }}>
+            <AiOutlineArrowRight />
+          </SwitchButton>
+        )}
       </div>
       <motion.div className=' relative left-1/2 -translate-x-1/2 flexCenter shadow-lg w-full sm:w-[80%] lg:w-[60%] h-[15.75rem] sm:h-[26.375rem] lg:h-[28.125rem] xl:h-[32.125rem] 2xl:h-[36.125rem] 3xl:h-[45.125rem]    overflow-hidden '>
         <AnimatePresence initial={false} custom={direction}>
@@ -62,15 +92,25 @@ const PhotoSlider = () => {
               x: { type: 'spring', stiffness: 300, damping: 30 },
             }}
             drag='x'
-            dragConstraints={{ left: 0, right: 0 }}
+            dragConstraints={{
+              left: 0,
+              right: 0,
+            }}
             dragElastic={1}
             onDragEnd={(e, { offset, velocity }) => {
               const swipe = swipePower(offset.x, velocity.x);
 
-              if (swipe < -swipeConfidenceThreshold) {
+              if (
+                swipe < -swipeConfidenceThreshold &&
+                imageIndex !== imagesPaths.length - 1
+              ) {
                 photoHandler(1);
-              } else if (swipe > swipeConfidenceThreshold) {
+                nextHandler('right');
+              } else if (swipe > swipeConfidenceThreshold && imageIndex > 0) {
                 photoHandler(-1);
+                nextHandler('left');
+
+                return;
               }
             }}
             className='absolute h-auto w-[95%]  lg:max-w-[85%] rounded-sm cursor-grab outline-[var(--mainColorOpacity30)]'
@@ -78,6 +118,14 @@ const PhotoSlider = () => {
           />
         </AnimatePresence>
       </motion.div>
+
+      <PhotoBar
+        imageIndex={imageIndex}
+        setPhotoIndex={setPhotoIndex}
+        nextHandler={nextHandler}
+        imageRef={imageRef}
+        photoBarRef={photoBarRef}
+      />
     </>
   );
 };
