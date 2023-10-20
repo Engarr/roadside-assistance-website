@@ -50,9 +50,9 @@ const CardOffer = ({ title, arr, icon, index }: CardOfferProps) => {
         custom={index}
         className=' relative flex flex-col justify-between shadow-md py-4 min-h-[150px] 
          mb-4  transition-all hover:shadow-2xl w-full lg:w-auto px-2 lg:px-10 overflow-hidden bg-white rounded-md'>
-        <h4 className='text-[var(--mainColor)] font-semibold text-xl lg:text-2xl mb-2 capitalize tracking-wider '>
+        <p className='text-[var(--mainColor)] font-semibold text-xl lg:text-2xl mb-2 capitalize tracking-wider '>
           {title}:
-        </h4>
+        </p>
         <div className='flex flex-col lg:flex-row items-center'>
           <div className='items-start flex flex-col text-left w-full '>
             <ul>

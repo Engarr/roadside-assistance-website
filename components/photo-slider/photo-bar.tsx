@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { imagesPaths } from '@/lib/data';
 import clsx from 'clsx';
 import Image from 'next/image';
-import SwitchButton from './switch-button';
+import SwitchButton from '../switch-button';
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
 
 type PhotoBarType = {
@@ -52,7 +52,7 @@ const PhotoBar = ({
             ref={imageRef}
             key={index}
             className={clsx(
-              `relative min-w-[calc(100%)]  sm:min-w-[calc(100%/2)]  lg:min-w-[calc(100%/3-0.24rem)] min-h-[120px] cursor-pointer rounded-md mr-1 last:mr-0`,
+              `relative sm:min-w-[calc(100%/2-0.24rem)] lg:min-w-[calc(100%/3-0.24rem)] min-h-[120px] cursor-pointer rounded-md mr-1 last:mr-0`,
               {
                 'border-[var(--mainColor)] border-2': index === imageIndex,
               }

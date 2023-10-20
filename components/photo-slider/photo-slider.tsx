@@ -4,7 +4,7 @@ import { imagesPaths } from '@/lib/data';
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
-import SwitchButton from './switch-button';
+import SwitchButton from '../switch-button';
 import PhotoBar from './photo-bar';
 
 const variants = {

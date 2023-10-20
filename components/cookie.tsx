@@ -46,16 +46,18 @@ const Cookie = () => {
               <p className='tracking-tight text-xs lg:text-base'>
                 Ta strona wykorzystuje pliki cookies. Informacje te
                 wykorzystywane są tylko do celów statystycznych w celu
-                usprawnienia działania serwisu. Dowiedz się więcej
-                <Link href='/polityka' className='text-[var(--darkBlue)]'>
+                usprawnienia działania serwisu.
+                <Link
+                  href='/polityka'
+                  className='text-[var(--mainColor)] font-semibold hover:text-[var(--mainColorHover)] transition-all'>
                   {' '}
-                  Dowiedz się więcej
+                  Więcej...
                 </Link>
               </p>
               <div className='w-full text-center my-1 lg:my-3 '>
                 <button
                   onClick={acceptCookieHandler}
-                  className=' px-2 py-2 lg:px-5 lg:py-3 bg-[var(--mainColor)] rounded-lg text-[var(--white)]'>
+                  className=' px-2 py-2 lg:px-5 lg:py-3 bg-[var(--mainColor)]  hover:bg-[var(--mainColorHover)] rounded-lg text-[var(--white)]  transition-all'>
                   Akceptuje
                 </button>
               </div>

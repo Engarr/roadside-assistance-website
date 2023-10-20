@@ -13,7 +13,7 @@ const Gallery = () => {
     <PageWrapper>
       <section
         ref={ref}
-        className=' mt-[9rem] lg:mt-[12rem]  min-h-[700px] '
+        className=' mt-[9rem] lg:mt-[12rem] min-h-[100vh]  md:min-h-[calc(100vh-192px)] '
         id='galeria'>
         <Title mb='mb-[1.25rem] lg:mb-[2.25rem]'>Galeria zdjęć</Title>
 
