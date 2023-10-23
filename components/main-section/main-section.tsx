@@ -26,6 +26,12 @@ const MainSection = () => {
           fill
           loading='lazy'
         />
+        {/* <img
+          src={imageUrl}
+          alt='bacground_Image'
+          loading='lazy'
+          className='object-cover w-full h-full'
+        /> */}
       </motion.div>
       <div
         className=' absolute p-2 lg:p-0 top-[20%] lg:top-[40%] left-1/2 -translate-x-[50%] z-[100] w-full lg:w-[65%] 

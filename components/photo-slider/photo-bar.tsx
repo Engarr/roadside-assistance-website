@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { imagesPaths } from '@/lib/data';
 import clsx from 'clsx';
 import Image from 'next/image';
@@ -69,6 +69,16 @@ const PhotoBar = ({
                 setPhotoIndex([index, index > imageIndex ? 1 : -1]);
               }}
             />
+            {/* <img
+              src={img}
+              alt='Firmowe_zdjęcie'
+              className='absolute object-cover rounded-md shadow-lg w-full h-full '
+              sizes='(max-width: 600px) 100vw, (max-width: 1024px) 50vw, 80vw'
+              loading='lazy'
+              onClick={() => {
+                setPhotoIndex([index, index > imageIndex ? 1 : -1]);
+              }}
+            /> */}
           </div>
         ))}
       </div>
