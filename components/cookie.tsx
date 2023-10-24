@@ -8,8 +8,7 @@ import Title from './title';
 
 const Cookie = () => {
   const isCookieAccepted =
-    (typeof localStorage !== 'undefined' && localStorage.getItem('cookie')) ||
-    false;
+    (typeof window !== 'undefined' && localStorage.getItem('cookie')) || false;
   const [isAccepted, setIsAccepted] = useState(isCookieAccepted);
 
   const acceptCookieHandler = () => {

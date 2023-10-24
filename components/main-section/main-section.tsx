@@ -17,21 +17,18 @@ const MainSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       />
-      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        className='h-full w-full relative'>
         <Image
           src={backgroundImage}
           alt='bacground_Image'
           quality={75}
-          className='object-cover'
+          className='object-cover relative'
+          priority
           fill
-          loading='lazy'
         />
-        {/* <img
-          src={imageUrl}
-          alt='bacground_Image'
-          loading='lazy'
-          className='object-cover w-full h-full'
-        /> */}
       </motion.div>
       <div
         className=' absolute p-2 lg:p-0 top-[20%] lg:top-[40%] left-1/2 -translate-x-[50%] z-[100] w-full lg:w-[65%] 
@@ -93,3 +90,11 @@ const MainSection = () => {
 };
 
 export default MainSection;
+{
+  /* <img
+          src={imageUrl}
+          alt='bacground_Image'
+          loading='lazy'
+          className='object-cover w-full h-full'
+        /> */
+}

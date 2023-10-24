@@ -47,22 +47,23 @@ const Contact = () => {
           <Title textSize='text-2xl' mb=' mb-[2.25rem]'>
             Siedziba firmy
           </Title>
-          <motion.h3
-            className='mb-2'
+          <motion.p
+            className='mb-4 lg:mb-2'
             variants={dropDownVariants}
             initial='initial'
             whileInView='animate'>
-            <span className='tracking-wider font-semibold text-xl'>
+            <span className='tracking-wider font-semibold text-xl '>
               TRANSWOS
             </span>{' '}
             - Stanisław Woś
-          </motion.h3>
+          </motion.p>
           <div className='flexCenter flex-col lg:flex-row lg:text-2xl mb-[3.125rem] lg:mb-0'>
             <motion.div
               className=' lg:mr-4 mb-2 lg:mb-0'
               initial={{ opacity: 0, rotateY: '-360deg' }}
               whileInView={{ opacity: 1, rotateY: '0deg' }}
-              transition={{ repeat: 2, duration: 0.5 }}>
+              transition={{ repeat: 2, duration: 0.5 }}
+              viewport={{ once: true }}>
               <GoLocation className=' text-5xl text-[var(--mainColor)]' />
             </motion.div>
             <motion.div
