@@ -48,17 +48,16 @@ const CardOffer = ({ title, arr, icon, index }: CardOfferProps) => {
         initial='start'
         animate={controls}
         custom={index}
-        className=' relative flex flex-col justify-between shadow-md py-4 min-h-[150px] 
-         mb-4  transition-all hover:shadow-2xl w-full lg:w-auto px-2 lg:px-10 overflow-hidden bg-white rounded-md'>
-        <p className='text-[var(--mainColor)] font-semibold text-xl lg:text-2xl mb-2 capitalize tracking-wider '>
+        className=' relative flex flex-col justify-start shadow-md py-4 min-h-[150px]  mb-4  transition-all hover:shadow-2xl w-full lg:w-[500px] px-2 lg:px-10 overflow-hidden bg-white/90 '>
+        <p className='text-[var(--mainColor)] font-bold text-xl lg:text-2xl mb-2 capitalize tracking-wider '>
           {title}:
         </p>
-        <div className='flex flex-col lg:flex-row items-center'>
-          <div className='items-start flex flex-col text-left w-full '>
-            <ul>
+        <div className='flex flex-col lg:flex-row items-center '>
+          <div className='items-start flex flex-col text-left w-full  '>
+            <ul className=''>
               {arr.map((i, index) => (
-                <li key={index} className='text-base mb-1'>
-                  <span className='text-green-500 pr-1 text-base lg:text-2xl'>
+                <li key={index} className='text-base mb-1 font-semibold'>
+                  <span className='text-green-500 pr-2 text-base lg:text-2xl'>
                     ✔
                   </span>
                   {i}
@@ -67,13 +66,13 @@ const CardOffer = ({ title, arr, icon, index }: CardOfferProps) => {
             </ul>
           </div>
           <div>
-            <div className='bg-gray-400/10 w-[70px] h-[70px] flexCenter rounded-full shadow-sm text-2xl lg:text-3xl lg:mx-5 '>
+            {/* <div className='bg-gray-400/10 w-[70px] h-[70px] flexCenter rounded-full shadow-sm text-2xl lg:text-3xl lg:mx-5 '>
               {icon}
-            </div>
+            </div> */}
           </div>
           <motion.div
             ref={ref}
-            className=' absolute top-0 bottom-0 left-0  right-0 bg-orange-400 z-[999] w-full h-full'
+            className=' absolute top-0 bottom-0 left-0  right-0 bg-orange-100 z-[999] w-full h-full'
             variants={slideVariants}
             initial='visible'
             animate={SlideControls}

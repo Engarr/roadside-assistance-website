@@ -6,6 +6,7 @@ type TitleProps = {
   children: React.ReactNode;
   textSize?: string;
   mb?: string;
+  style?: string;
 };
 
 export const dropDownVariants = {
@@ -21,6 +22,7 @@ export const dropDownVariants = {
 
 const Title = ({
   children,
+  style,
   textSize = 'text-3xl lg:text-4xl',
   mb = ' mb-[4.25rem]',
 }: TitleProps) => {
@@ -29,7 +31,8 @@ const Title = ({
       className={clsx(
         'tracking-wider text-[var(--mainColor)] font-bold  w-full text-center px-1 lg:px-0',
         textSize,
-        mb
+        mb,
+        style
       )}
       variants={dropDownVariants}
       whileInView='animate'

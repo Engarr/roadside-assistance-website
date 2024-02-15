@@ -3,26 +3,24 @@
 @tailwind utilities;
 
 :root {
-  --background: #f1f5f9;
-  --mainColor: #d47500;
-  --mainColorHover: #b86908;
-  --mainColorOpacity60: rgba(212, 117, 0, 0.6);
-  --mainColorOpacity30: rgba(212, 117, 0, 0.3);
-  --mainColorOpacity10: rgba(212, 117, 0, 0.1);
+  --background: #efecec;
+  --background-90: rgb(239, 236, 236, 0.9);
+  --background-dark: rgb(0, 0, 0, 0.9);
+  --text-main-color: #000000;
+  --text-main-white: #efecec;
+  --text-main-dark: #122313;
+
+  --mainColor: #fa8525;
+  --mainColorHover: #fa8525de;
+  --mainColorOpacity60: rgb(252, 103, 54, 0.6);
+  --mainColorOpacity30: rgb(252, 103, 54, 0.3);
+  --mainColorOpacity10: rgb(252, 103, 54, 0.1);
   --blue: #1e90ff;
   --darkBlue: #0847a5;
   --green: #00aa00;
   --darkGreen: #045704;
   --white: #ffffff;
 }
-
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-} */
 
 body {
   background-color: var(--background);
@@ -45,4 +43,18 @@ body {
 }
 .photoBar::-webkit-scrollbar {
   display: none;
+}
+.gradient-background {
+  background: linear-gradient(
+    180deg,
+    rgba(248, 241, 241, 0),
+    rgb(248, 241, 241, 0.95)
+  );
+}
+.gradient-background-down {
+  background: linear-gradient(
+    180deg,
+    rgba(248, 241, 241, 0.85),
+    rgb(248, 241, 241, 0)
+  );
 }
