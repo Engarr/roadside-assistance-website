@@ -29,7 +29,7 @@ export default function RootLayout({
       <body className={`${poppins.className} overflow-x-hidden`}>
         <ContextProvider>
           <Header />
-          <ScrollTop />
+          
           <main>{children}</main>
           <Footer />
           <Cookie />

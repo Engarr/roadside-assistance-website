@@ -49,7 +49,6 @@ const MainSection = () => {
           </motion.button>
         </div>
       </motion.div>
-      <CallBtn />
     </section>
   );
 };

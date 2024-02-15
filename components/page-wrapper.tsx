@@ -11,7 +11,6 @@ type PageWrapperType = {
 const PageWrapperVaraints = {
   hidden: {
     opacity: 0,
-    x: -100,
   },
   visible: {
     opacity: 1,
@@ -19,7 +18,6 @@ const PageWrapperVaraints = {
   },
   exit: {
     opacity: 0,
-    x: -100,
   },
 };
 

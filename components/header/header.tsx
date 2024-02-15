@@ -13,6 +13,8 @@ import logo from '@/public/image/Logo-transwoś.png';
 import { useScrollPosition } from '@/context/scroll-position-context';
 import { useActiveSection } from '@/context/activeSection-context';
 import Wrapper from '../wrapper';
+import CallBtn from '../main-section/call-btn';
+import ScrollTop from '../scroll-top';
 
 const Header = () => {
   const [menuVisible, setMenuVisible] = useState(false);
@@ -125,6 +127,8 @@ const Header = () => {
           menuVisible={menuVisible}
         />
       </motion.header>
+
+      <CallBtn />
     </>
   );
 };

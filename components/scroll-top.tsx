@@ -17,7 +17,7 @@ const ScrollTop = () => {
       {scrollPositionY > 300 && (
         <motion.div
           onClick={scrollToTopHandler}
-          className='fixed right-1 lg:right-5 bottom-2 lg:bottom-5 z-[990] bg-black/20 rounded-full p-[0.2rem] lg:p-2 cursor-pointer '
+          className='fixed right-0 lg:right-5 bottom-[5rem] lg:bottom-5 z-[990] bg-black/20 rounded-full p-[0.2rem] lg:p-2 cursor-pointer mr-4 w-[50px]]'
           initial={{ opacity: 0, y: 100 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 100 }}
