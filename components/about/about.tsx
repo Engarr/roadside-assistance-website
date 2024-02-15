@@ -16,7 +16,7 @@ const About = () => {
     <section
       ref={ref}
       id='onas'
-      className='scroll-mt-[5rem] lg:scroll-mt-24 relative w-full mt-0 lg:text-xl p-5 flex-col '>
+      className='scroll-mt-[5rem] lg:scroll-mt-24 relative w-full mt-0 lg:text-xl p-5 flex-col py-16'>
       <Wrapper style='py-16'>
         <motion.div className='absolute w-[100px] lg:w-[200px] lg:h-[200px] bottom-0 lg:right-[10%] right-[-5%] '>
           <Image src={sign} alt='' loading='lazy' quality={10} fill />

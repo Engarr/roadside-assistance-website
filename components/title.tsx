@@ -29,7 +29,7 @@ const Title = ({
   return (
     <motion.h2
       className={clsx(
-        'tracking-wider text-[var(--mainColor)] font-bold  w-full text-center px-1 lg:px-0',
+        'tracking-tight text-[var(--mainColor)] font-bold  w-full text-center px-1 lg:px-0',
         textSize,
         mb,
         style
