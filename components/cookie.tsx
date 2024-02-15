@@ -20,7 +20,7 @@ const Cookie = () => {
       <AnimatePresence mode='wait'>
         {!isAccepted && (
           <motion.div
-            className='fixed bottom-0 lg:right-0 lg:bottom-1 lg:w-auto lg:max-w-[350px] h-auto z-[999] bg-[var(--white)] shadow-md shadow-white/25 rounded-sm p-2 m-0 lg:p-5  lg:m-2 '
+            className='fixed bottom-0 lg:left-0 lg:bottom-1 w-full lg:w-auto xl:max-w-[350px] h-auto z-[999] bg-[var(--white)] shadow-md shadow-white/25 rounded-sm p-2 m-0 lg:p-5  lg:m-2 '
             key='cookie-banner'
             initial={{ opacity: 0, y: 100, display: 'none' }}
             animate={{
