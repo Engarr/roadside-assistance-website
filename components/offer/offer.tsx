@@ -18,7 +18,14 @@ const Offer = () => {
       className='scroll-mt-[5rem] lg:scroll-mt-24  relative text-center  '>
       <div className='absolute  w-full h-full top-0 left-0'>
         <div className='bg-black/10 absolute top-0 left-0 z-40 h-full w-full blur-md ' />
-        <Image src={bgImg} alt='' fill className='object-cover' quality={50} />
+        <Image
+          src={bgImg}
+          alt=''
+          fill
+          className='object-cover'
+          quality={50}
+          loading='lazy'
+        />
         <a
           href='https://www.vecteezy.com/free-photos/road'
           className='hidden'

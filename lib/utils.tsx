@@ -1,4 +1,4 @@
-import {twMerge} from 'tailwind-merge'
+import { twMerge } from 'tailwind-merge';
 import { type ClassValue, clsx } from 'clsx';
 
 export const handleCall = () => {
@@ -9,3 +9,12 @@ export const handleCall = () => {
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+
+export const scrolltoHash = function (id: string) {
+  const element = document.getElementById(id);
+  console.log('dizała/?');
+  element?.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start',
+  });
+};

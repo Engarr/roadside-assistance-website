@@ -1,131 +1,169 @@
 'use client';
 
-import { imagesPaths } from '@/lib/data';
-import React, { useState, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai';
-import SwitchButton from '../switch-button';
-import PhotoBar from './photo-bar';
+import React, { useState } from 'react';
+import { motion, useMotionValue } from 'framer-motion';
+import Image, { StaticImageData } from 'next/image';
+import { cn } from '@/lib/utils';
+import { HiMagnifyingGlassPlus } from 'react-icons/hi2';
 
-const variants = {
-  enter: (direction: number) => {
-    return {
-      x: direction > 0 ? 1500 : -1500,
-    };
-  },
-  center: {
-    zIndex: 1,
-    x: 0,
-  },
-  exit: (direction: number) => {
-    return {
-      zIndex: 0,
-      x: direction < 0 ? 1500 : -1500,
-    };
-  },
+type PhotoSliderType = {
+  imagesPaths: StaticImageData[];
+
+  setFullscreenImageArr: React.Dispatch<
+    React.SetStateAction<StaticImageData[] | null>
+  >;
+
+  setImgIndex: React.Dispatch<React.SetStateAction<number>>;
 };
-const swipeConfidenceThreshold = 1500;
-const swipePower = (offset: number, velocity: number) => {
-  return Math.abs(offset) * velocity;
+const DRAG_BUFFER = 30;
+const SPRING_OPTIONS = {
+  type: 'spring',
+  mass: 3,
+  stiffness: 300,
+  damping: 50,
 };
 
-const PhotoSlider = () => {
-  const [[photoIndex, direction], setPhotoIndex] = useState([0, 0]);
-  const imageIndex =
-    ((photoIndex % imagesPaths.length) + imagesPaths.length) %
-    imagesPaths.length;
-  const imageRef = useRef<HTMLDivElement | null>(null);
-  const photoBarRef = useRef<HTMLDivElement | null>(null);
-  const imageWidth = (imageRef?.current?.clientWidth ?? 0) + 4;
+const PhotoSlider = ({
+  imagesPaths,
 
-  const photoHandler = (newDirection: number) => {
-    setPhotoIndex([photoIndex + newDirection, newDirection]);
+  setImgIndex,
+  setFullscreenImageArr,
+}: PhotoSliderType) => {
+  const [dragging, setDragging] = useState(false);
+  const [imageIdx, setImageIdx] = useState(0);
+
+  const dragX = useMotionValue(0);
+
+  const onDragStart = () => {
+    setDragging(true);
   };
-
-  const nextHandler = (direction: string) => {
-    if (photoBarRef && photoBarRef.current) {
-      if (direction === 'left') {
-        photoBarRef.current.scrollLeft -= imageWidth;
-      } else {
-        photoBarRef.current.scrollLeft += imageWidth;
-      }
+  const onDragEnd = () => {
+    setDragging(false);
+    const x = dragX.get();
+    if (x <= -DRAG_BUFFER && imageIdx < imagesPaths.length - 1) {
+      setImageIdx((prev) => prev + 1);
+    } else if (x >= DRAG_BUFFER && imageIdx > 0) {
+      setImageIdx((prev) => prev - 1);
     }
+  };
+  const OnClickSetFullScreenImagesArr = (
+    imagesArr: StaticImageData[],
+    activeImageIndex: number
+  ) => {
+    setFullscreenImageArr(imagesArr);
+    setImgIndex(activeImageIndex);
+    document.body.style.overflowY = 'hidden';
   };
 
   return (
     <>
-      <div className='w-[200px] h-[50px] flex justify-between relative left-1/2 -translate-x-1/2 '>
-        <SwitchButton
-          condition={imageIndex !== 0}
-          styleClass='left-0 absolute'
-          arrowDirection={-5}
-          actionHandler={() => {
-            photoHandler(-1);
-            nextHandler('left');
-          }}>
-          <AiOutlineArrowLeft />
-        </SwitchButton>
-        <SwitchButton
-          condition={imageIndex !== imagesPaths.length - 1}
-          styleClass='right-0 absolute'
-          arrowDirection={5}
-          actionHandler={() => {
-            photoHandler(1);
-            nextHandler('right');
-          }}>
-          <AiOutlineArrowRight />
-        </SwitchButton>
-      </div>
-      <motion.div className=' relative left-1/2 -translate-x-1/2 flexCenter shadow-lg w-full sm:w-[80%] lg:w-[60%] h-[15.75rem] sm:h-[26.375rem] lg:h-[28.125rem] xl:h-[32.125rem] 2xl:h-[36.125rem] 3xl:h-[45.125rem]    overflow-hidden '>
-        <AnimatePresence initial={false} custom={direction}>
-          <motion.img
-            key={photoIndex}
-            src={imagesPaths[imageIndex]}
-            custom={direction}
-            variants={variants}
-            initial='enter'
-            animate='center'
-            exit='exit'
-            transition={{
-              x: { type: 'spring', stiffness: 300, damping: 30 },
-            }}
-            drag='x'
-            dragConstraints={{
-              left: 0,
-              right: 0,
-            }}
-            dragElastic={1}
-            onDragEnd={(e, { offset, velocity }) => {
-              const swipe = swipePower(offset.x, velocity.x);
-
-              if (
-                swipe < -swipeConfidenceThreshold &&
-                imageIndex !== imagesPaths.length - 1
-              ) {
-                photoHandler(1);
-                nextHandler('right');
-              } else if (swipe > swipeConfidenceThreshold && imageIndex > 0) {
-                photoHandler(-1);
-                nextHandler('left');
-
-                return;
-              }
-            }}
-            className='absolute h-auto w-[95%]  lg:max-w-[85%] rounded-sm cursor-grab outline-[var(--mainColorOpacity30)]'
-            whileTap={{ cursor: 'grabbing' }}
+      <div className=' relative  overflow-hidden xl:py-5 w-full xl:w-3/4  bg-[var(--background-white-2)] p-2  mb-5 mt-0'>
+        <motion.div
+          className='flex items-center cursor-grab active:cursor-grabbing h-[300px] lg:h-[500px] '
+          drag='x'
+          dragConstraints={{ left: 0, right: 0 }}
+          style={{ x: dragX }}
+          animate={{ translateX: `-${imageIdx * 100}%` }}
+          transition={SPRING_OPTIONS}
+          onDragStart={onDragStart}
+          onDragEnd={onDragEnd}>
+          <Images
+            imagesPaths={imagesPaths}
+            imageIdx={imageIdx}
+            OnClickSetFullScreenImagesArr={OnClickSetFullScreenImagesArr}
           />
-        </AnimatePresence>
-      </motion.div>
-
-      <PhotoBar
-        imageIndex={imageIndex}
-        setPhotoIndex={setPhotoIndex}
-        nextHandler={nextHandler}
-        imageRef={imageRef}
-        photoBarRef={photoBarRef}
-      />
+        </motion.div>
+        <Dots
+          imageIdx={imageIdx}
+          setImageIdx={setImageIdx}
+          imagesPaths={imagesPaths}
+        />
+      </div>
     </>
   );
 };
 
 export default PhotoSlider;
+
+type ImagesPathsType = {
+  imagesPaths: StaticImageData[];
+  imageIdx: number;
+  OnClickSetFullScreenImagesArr: (
+    imagesArr: StaticImageData[],
+    activeImageIndex: number
+  ) => void;
+};
+
+const Images = ({
+  imagesPaths,
+  imageIdx,
+  OnClickSetFullScreenImagesArr,
+}: ImagesPathsType) => {
+  return (
+    <>
+      {imagesPaths.map((image, idx) => {
+        return (
+          <motion.div
+            key={idx}
+            className='aspect-auto relative shrink-0 w-[100%] h-[100%] group'
+            animate={{ scale: imageIdx === idx ? 0.95 : 0.85 }}
+            transition={SPRING_OPTIONS}>
+            <div
+              className='absolute left-[90%] md:left-[80%] top-[2%] text-3xl  lg:opacity-0 group-hover:opacity-100 transition-all z-[100] p-1 cursor-pointer text-[var(--mainColor)] hover:scale-[1.2] bg-white/80 rounded-full shadow-xl '
+              onClick={() => OnClickSetFullScreenImagesArr(imagesPaths, idx)}>
+              <HiMagnifyingGlassPlus />
+            </div>
+            <div className='z-[50] h-[100%] w-[100%] absolute  bg-black opacity-0'></div>
+
+            <Image
+              src={image.src}
+              alt='zdjęcie galerii'
+              quality={100}
+              fill
+              sizes='100vh'
+              className='object-contain z-0  '
+              loading='lazy'
+            />
+          </motion.div>
+        );
+      })}
+    </>
+  );
+};
+
+const Dots = ({
+  imageIdx,
+  setImageIdx,
+  imagesPaths,
+}: {
+  imageIdx: number;
+  setImageIdx: React.Dispatch<React.SetStateAction<number>>;
+  imagesPaths: StaticImageData[];
+}) => {
+  return (
+    <div className='flex mt-0 w-full justify-center gap-2  overflow-hidden wrap'>
+      {imagesPaths.map((i, index) => {
+        return (
+          <button
+            key={index}
+            onClick={() => setImageIdx(index)}
+            className={cn(
+              'max-h-[50px] xl:max-h-[100px]  max-w-[200px] xl:max-w-[100px] overflow-hidden  border-2  relative',
+              {
+                'border-[var(--mainColor)] ': imageIdx === index,
+              }
+            )}>
+            <Image
+              src={i}
+              alt='zdjecie'
+              width={100}
+              height={100}
+              quality={10}
+              className='0bject-left-top'
+            />
+          </button>
+        );
+      })}
+    </div>
+  );
+};

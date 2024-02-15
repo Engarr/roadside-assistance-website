@@ -1,14 +1,15 @@
 'use client';
 import Image from 'next/image';
 import React from 'react';
-import backgroundImage from '@/public/image/AdobeStock_227994316.jpeg';
+import backgroundImage from '@/public/image/AdobeStock_227994316.jpg';
 import { motion } from 'framer-motion';
 import { useIsSectionInView } from '@/lib/hook';
-import Link from 'next/link';
 import CallBtn from './call-btn';
+import { scrolltoHash } from '@/lib/utils';
 
 const MainSection = () => {
   const { ref } = useIsSectionInView('Strona główna', 1);
+
   return (
     <section className='h-screen relative ' id='glowna' ref={ref}>
       <div className='h-full w-ful relative'>
@@ -35,18 +36,17 @@ const MainSection = () => {
           </h3>
         </div>
         <div className=' lg:w-[300px] w-[250px] left-1/2 relative -translate-x-1/2'>
-          <Link href={'/#onas'} className='mt-[50px] shadow-lg '>
-            <motion.button
-              className='bg-[var(--mainColor)] py-3  lg:py-5 lg:px-10 rounded-sm font-semibold w-full text-[var(--text-main-dark)] text-sm lg:text-base'
-              whileHover={{
-                scale: 1.05,
-                boxShadow: '5px 5px 0 var(--mainColorOpacity60)',
-              }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: 'spring', stiffness: 300 }}>
-              Dowiedz się więcej
-            </motion.button>
-          </Link>
+          <motion.button
+            onClick={() => scrolltoHash('onas')}
+            className='bg-[var(--mainColor)] py-3  lg:py-5 lg:px-10 rounded-sm font-semibold w-full text-[var(--text-main-dark)] text-sm lg:text-base mt-[50px] shadow-lg'
+            whileHover={{
+              scale: 1.05,
+              boxShadow: '5px 5px 0 var(--mainColorOpacity60)',
+            }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: 'spring', stiffness: 300 }}>
+            Dowiedz się więcej
+          </motion.button>
         </div>
       </motion.div>
       <CallBtn />

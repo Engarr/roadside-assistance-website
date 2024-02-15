@@ -1,9 +1,14 @@
 import React from 'react';
 import { BsPatchQuestion, BsTruckFlatbed } from 'react-icons/bs';
 import { GrMapLocation } from 'react-icons/gr';
+import photoOne from '@/public/images/333242217_526028576318165_996668996135343305_n.jpg';
+import photoTwo from '@/public/images/333445182_756599999374793_2499658063319991975_n.jpg';
+import photoThree from '@/public/images//333626219_587718386632056_2410935324231722916_n.jpg';
+import photoFour from '@/public/images/370056219_662553392612122_1630923149949011807_n.jpg';
+import photoFive from '@/public/images/421804026_383476901303273_9038530413462100378_n.jpg';
 
 export const links = [
-  { name: 'Strona główna', link: '/#glowna' },
+  { name: 'Strona główna', link: '/' },
   { name: 'O nas', link: '/#onas' },
   { name: 'Oferta', link: '/#oferta' },
   { name: 'Kontakt', link: '/#kontakt' },
@@ -60,8 +65,9 @@ export const polityc = [
 ] as const;
 
 export const imagesPaths = [
-  '/images/333242217_526028576318165_996668996135343305_n.jpg',
-  '/images/333445182_756599999374793_2499658063319991975_n.jpg',
-  '/images/333626219_587718386632056_2410935324231722916_n.jpg',
-  '/images/370056219_662553392612122_1630923149949011807_n.jpg',
+  photoFive,
+  photoFour,
+  photoThree,
+  photoTwo,
+  photoOne,
 ];

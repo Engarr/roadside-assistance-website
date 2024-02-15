@@ -7,13 +7,11 @@ type DescriptionProps = {
   index: number;
 };
 const slideAnimation = {
-  initial: (index: number) => ({
+  initial: () => ({
     opacity: 0,
-    x: index % 2 === 0 ? -100 : 100,
   }),
   slide: (index: number) => ({
     opacity: 1,
-    x: 0,
     transition: { delay: index * 0.125 },
   }),
 };

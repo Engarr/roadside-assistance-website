@@ -25,6 +25,7 @@
 body {
   background-color: var(--background);
 }
+
 .flexCenter {
   @apply flex items-center justify-center;
 }

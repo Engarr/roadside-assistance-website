@@ -8,7 +8,7 @@ import BusinessCard from './business-card';
 
 import MobileMenu from './mobile-menu';
 import { links } from '@/lib/data';
-import { cn } from '@/lib/utils';
+import { cn, scrolltoHash } from '@/lib/utils';
 import logo from '@/public/image/Logo-transwoś.png';
 import { useScrollPosition } from '@/context/scroll-position-context';
 import { useActiveSection } from '@/context/activeSection-context';
@@ -39,7 +39,7 @@ const Header = () => {
     <>
       <motion.header
         className={cn(
-          'flex fixed sm:justify-center justify-between w-[100%] lg:h-[8rem] h-[5rem]  z-[100] top-0 bg-white/95 text-[var(--text-main-color)] transition-all duration-300 ',
+          'flex fixed sm:justify-center justify-between w-[100%] lg:h-[8rem] h-[5rem] z-[100] top-0 bg-white/95 text-[var(--text-main-color)] transition-all duration-300 ',
           { 'lg:h-[6rem] bg-white/90': scrollPositionY > 0 }
         )}
         variants={{
@@ -56,12 +56,16 @@ const Header = () => {
             <div className='w-full relative flex items-center justify-start '>
               <div className='hidden lg:flex lg:justify-start lg:items-center ml-6'>
                 <motion.div
-                  className='w-[80px] h-[80px] z-50'
+                  className={cn(
+                    'w-[120px] h-[100px] z-50  transition-all duration-300',
+                    {
+                      'w-[100px]': scrollPositionY > 0,
+                    }
+                  )}
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
-                  whileHover={{ scale: 1.02 }}
-                  transition={{ type: 'spring', stiffness: 100 }}>
-                  <Link href='/#glowna'>
+                  whileHover={{ scale: 1.02 }}>
+                  <Link href='/'>
                     <Image
                       src={logo}
                       alt='logo'
@@ -80,6 +84,7 @@ const Header = () => {
                           setActiveSection(link.name);
                           setMenuVisible(false);
                           setTimeOfLastClick(Date.now());
+                          scrolltoHash(link.name);
                         }}
                         whileHover={{
                           scale: 1.05,
