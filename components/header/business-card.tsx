@@ -1,5 +1,4 @@
 import React from 'react';
-import { roboto_mono } from '@/lib/fonts';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { CgPhone } from 'react-icons/cg';
