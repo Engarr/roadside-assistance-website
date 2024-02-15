@@ -28,7 +28,7 @@ const MainSection = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}>
         <div className='w-full'>
-          <h1 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl uppercase font-bold tracking-widest mb-10  underline underline-offset-8 decoration-[var(--mainColor)]'>
+          <h1 className='text-2xl md:text-3xl lg:text-4xl xl:text-5xl uppercase font-bold -tracking-tighter mb-10  underline underline-offset-8 decoration-[var(--mainColor)]'>
             Pomoc drogowa
           </h1>
           <h3 className='font-semibold text-base md:text-lg lg:text-xl xl:text-2xl tracking-wider w-full'>
