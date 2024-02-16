@@ -4,7 +4,6 @@ import React from 'react';
 import backgroundImage from '@/public/image/AdobeStock_227994316.jpg';
 import { motion } from 'framer-motion';
 import { useIsSectionInView } from '@/lib/hook';
-import CallBtn from './call-btn';
 import { scrolltoHash } from '@/lib/utils';
 
 const MainSection = () => {

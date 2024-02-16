@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import { cn } from '@/lib/utils';
-import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import logo from '@/public/image/Logo-transwoś.png';
 import { useActiveSection } from '@/context/activeSection-context';
@@ -15,8 +14,7 @@ type MobileMenuProps = {
 };
 
 const MobileMenu = ({ handleToggleMenu, menuVisible }: MobileMenuProps) => {
-  const { activeSection, setActiveSection, setTimeOfLastClick } =
-    useActiveSection();
+  const { activeSection } = useActiveSection();
 
   const handleCloseMenu = () => {
     handleToggleMenu();
