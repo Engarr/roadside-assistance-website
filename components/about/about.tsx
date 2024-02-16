@@ -6,6 +6,7 @@ import Title from '../title';
 import Wrapper from '../wrapper';
 import Image from 'next/image';
 import sign from '@/public/image/vecteezy_ai-generated-road-traffic-cone-border_36181135.png';
+import photo from '@/public/images/421804026_383476901303273_9038530413462100378_n.jpg';
 
 import { motion } from 'framer-motion';
 
@@ -17,6 +18,9 @@ const About = () => {
       ref={ref}
       id='onas'
       className='scroll-mt-[5rem] lg:scroll-mt-24 relative w-full mt-0 lg:text-xl p-5 flex-col py-16'>
+      <div className=' w-full h-full absolute top-0  max-w-[2560px] left-1/2 -translate-x-1/2 '>
+        <Image src={photo} alt='' fill className='object-cover opacity-10' />
+      </div>
       <Wrapper style='py-16'>
         <motion.div className='absolute w-[100px] lg:w-[200px] lg:h-[200px] bottom-0 lg:right-[10%] right-[-5%] '>
           <Image src={sign} alt='' loading='lazy' quality={10} fill />
