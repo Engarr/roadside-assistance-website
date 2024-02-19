@@ -5,8 +5,9 @@ import Description from './description';
 import Title from '../title';
 import Wrapper from '../wrapper';
 import Image from 'next/image';
+
 import sign from '@/public/image/vecteezy_ai-generated-road-traffic-cone-border_36181135.png';
-import photo from '@/public/images/421804026_383476901303273_9038530413462100378_n.jpg';
+import photo from '@/public/images/421804026_383476901303273_9038530413462100378_n.webp';
 
 import { motion } from 'framer-motion';
 
@@ -22,8 +23,15 @@ const About = () => {
         <Image src={photo} alt='' fill className='object-cover opacity-10' />
       </div>
       <Wrapper style='py-16'>
-        <motion.div className='absolute w-[100px] lg:w-[200px] lg:h-[200px] bottom-0 lg:right-[10%] right-[-5%] '>
-          <Image src={sign} alt='' loading='lazy' quality={10} fill />
+        <motion.div className='absolute w-[100px] h-[100px] lg:w-[200px] lg:h-[200px] bottom-0 lg:right-[10%] right-[-5%] '>
+          <Image
+            src={sign}
+            alt=''
+            loading='lazy'
+            quality={10}
+            fill
+            sizes='100vh'
+          />
           <a
             href='https://www.vecteezy.com/free-png/road'
             rel='nofollow'

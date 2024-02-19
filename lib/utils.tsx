@@ -12,7 +12,6 @@ export function cn(...inputs: ClassValue[]) {
 
 export const scrolltoHash = function (id: string) {
   const element = document.getElementById(id);
-  console.log('dizała/?');
   element?.scrollIntoView({
     behavior: 'smooth',
     block: 'start',

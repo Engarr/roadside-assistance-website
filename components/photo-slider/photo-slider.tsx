@@ -141,14 +141,14 @@ const Dots = ({
   imagesPaths: StaticImageData[];
 }) => {
   return (
-    <div className='flex mt-0 w-full justify-center gap-2  overflow-hidden wrap'>
+    <div className='flex mt-0 w-full justify-center gap-1  overflow-hidden wrap h-[50px] px-2'>
       {imagesPaths.map((i, index) => {
         return (
           <button
             key={index}
             onClick={() => setImageIdx(index)}
             className={cn(
-              'max-h-[50px] xl:max-h-[100px]  max-w-[200px] xl:max-w-[100px] overflow-hidden  border-2  relative',
+              'max-h-[30px]  max-w-[30px] lg:max-h-[50px]  lg:max-w-[50px] h-full w-full overflow-hidden  border-2  relative rounded-full lg:rounded-none',
               {
                 'border-[var(--mainColor)] ': imageIdx === index,
               }
@@ -156,10 +156,9 @@ const Dots = ({
             <Image
               src={i}
               alt='zdjecie'
-              width={100}
-              height={100}
+              fill
               quality={10}
-              className='0bject-left-top'
+              className='object-cover'
             />
           </button>
         );

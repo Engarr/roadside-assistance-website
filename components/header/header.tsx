@@ -71,7 +71,10 @@ const Header = () => {
                       src={logo}
                       alt='logo'
                       priority
-                      onClick={() => setMenuVisible(false)}
+                      onClick={() => {
+                        setMenuVisible(false);
+                        setActiveSection('Strona główna');
+                      }}
                     />
                   </Link>
                 </motion.div>

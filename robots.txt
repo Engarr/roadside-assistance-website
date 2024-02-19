@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+Disallow: /wp/
+Sitemap: https://acme.com/sitemap.xml

@@ -23,6 +23,7 @@ const Offer = () => {
           alt=''
           fill
           className='object-cover'
+          sizes='100vh'
           quality={50}
           loading='lazy'
         />

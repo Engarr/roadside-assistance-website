@@ -1,11 +1,13 @@
 import React from 'react';
 import { BsPatchQuestion, BsTruckFlatbed } from 'react-icons/bs';
 import { GrMapLocation } from 'react-icons/gr';
-import photoOne from '@/public/images/333242217_526028576318165_996668996135343305_n.jpg';
-import photoTwo from '@/public/images/333445182_756599999374793_2499658063319991975_n.jpg';
-import photoThree from '@/public/images//333626219_587718386632056_2410935324231722916_n.jpg';
-import photoFour from '@/public/images/370056219_662553392612122_1630923149949011807_n.jpg';
-import photoFive from '@/public/images/421804026_383476901303273_9038530413462100378_n.jpg';
+import photo1 from '@/public/images/333242217_526028576318165_996668996135343305_n.jpg';
+import photo2 from '@/public/images/333445182_756599999374793_2499658063319991975_n.webp';
+import photo3 from '@/public/images//333626219_587718386632056_2410935324231722916_n.jpg';
+import photo4 from '@/public/images/370056219_662553392612122_1630923149949011807_n.webp';
+import photo5 from '@/public/images/1708081468810.webp';
+import photo6 from '@/public/images/421804026_383476901303273_9038530413462100378_n.webp';
+import photo7 from '@/public/images/1708081468821.webp';
 
 export const links = [
   { name: 'Strona główna', link: '/' },
@@ -65,9 +67,11 @@ export const polityc = [
 ] as const;
 
 export const imagesPaths = [
-  photoFive,
-  photoFour,
-  photoThree,
-  photoTwo,
-  photoOne,
+  photo6,
+  photo3,
+  photo4,
+  photo5,
+  photo2,
+  photo7,
+  photo1,
 ];

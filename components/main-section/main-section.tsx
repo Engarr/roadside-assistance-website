@@ -1,7 +1,8 @@
 'use client';
 import Image from 'next/image';
 import React from 'react';
-import backgroundImage from '@/public/image/AdobeStock_227994316.jpg';
+import backgroundImage from '@/public/image/Awaria-samochodu-na-drodze-1536x864.webp';
+import mobileBg from '@/public/image/mobile-bg.jpg';
 import { motion } from 'framer-motion';
 import { useIsSectionInView } from '@/lib/hook';
 import { scrolltoHash } from '@/lib/utils';
@@ -10,14 +11,27 @@ const MainSection = () => {
   const { ref } = useIsSectionInView('Strona główna', 1);
 
   return (
-    <section className='h-screen relative ' id='glowna' ref={ref}>
-      <div className='h-full w-ful relative'>
+    <section
+      className=' lg:min-h-[calc(1080px-128px)] relative  h-[100vh]'
+      id='glowna'
+      ref={ref}>
+      <div className='absolute top-0 left-0 h-full w-full'>
         <div className='bg-black/50 absolute top-0 left-0 z-40 h-full w-full' />
         <Image
           src={backgroundImage}
           alt='bacground_Image'
           quality={45}
-          className='object-cover '
+          sizes='100vh'
+          className='object-cover lg:block hidden'
+          priority
+          fill
+        />
+        <Image
+          src={mobileBg}
+          alt='bacground_Image'
+          quality={45}
+          sizes='100vh'
+          className='object-cover lg:hidden '
           priority
           fill
         />
