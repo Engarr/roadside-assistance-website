@@ -35,6 +35,12 @@ const MainSection = () => {
           priority
           fill
         />
+        <a
+          href='https://www.vecteezy.com/free-photos/road-assistance'
+          rel='nofollow'
+          className='hidden'>
+          Road Assistance Stock photos by Vecteezy
+        </a>
       </div>
       <motion.div
         className='absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-40 text-center gap-10 flex flex-col text-[var(--text-main-white)] w-full '
